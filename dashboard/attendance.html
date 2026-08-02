@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View your attendance history — IronPeak Member Dashboard.">
+    <title>Attendance History | IronPeak Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style.css">
+    <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#E8401C', secondary: '#1A1A2E' } } } }</script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body class="dark" id="dash-body">
+<div class="dash-layout">
+
+    <!-- SIDEBAR (reuse) -->
+    <aside class="dash-sidebar" id="dash-sidebar">
+        <div class="dash-sidebar-inner">
+            <div class="dash-logo-wrap">
+                <a href="../index.html" class="flex items-center gap-2.5 logo-bounce">
+                    <div class="w-9 h-9 bg-[#E8401C] rounded-xl flex items-center justify-center shrink-0 shadow-md"><svg width="20" height="20" viewBox="0 0 100 100" fill="none"><rect x="10" y="42" width="80" height="16" rx="4" fill="white" opacity="0.95"/><rect x="6" y="28" width="16" height="44" rx="5" fill="white" opacity="0.9"/><rect x="78" y="28" width="16" height="44" rx="5" fill="white" opacity="0.9"/><rect x="0" y="35" width="10" height="30" rx="4" fill="white" opacity="0.7"/><rect x="90" y="35" width="10" height="30" rx="4" fill="white" opacity="0.7"/></svg></div>
+                    <div class="flex flex-col leading-none"><span class="font-black text-white text-sm tracking-tight" style="font-family:'Barlow Condensed',sans-serif;">IRON<span class="text-[#E8401C]">PEAK</span></span><span class="text-[10px] text-[#9090b8] font-semibold tracking-widest uppercase">Member Portal</span></div>
+                </a>
+                <button id="sidebar-close" onclick="closeSidebar()" class="text-[#9090b8] hover:text-white p-1.5 rounded-lg hover:bg-white/5 hidden"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            </div>
+            <div class="flex items-center gap-3 px-3 py-3 mb-4 rounded-2xl bg-white/5">
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=80&h=80&fit=crop&crop=face" class="w-10 h-10 rounded-full object-cover shrink-0 border-2 border-[#E8401C]" alt="Member">
+                <div class="overflow-hidden"><p class="text-white text-sm font-bold leading-none truncate">Alex Johnson</p><p class="text-[#9090b8] text-[11px] mt-0.5">PRO Member</p></div>
+            </div>
+            <nav class="dash-nav flex-1">
+                <a href="index.html" class="dash-nav-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</a>
+                <a href="classes.html" class="dash-nav-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book Classes</a>
+                <a href="attendance.html" class="dash-nav-item active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Attendance</a>
+                <a href="workouts.html" class="dash-nav-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 4h-2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><path d="M6 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="10" y1="10" x2="14" y2="10"/><line x1="10" y1="14" x2="14" y2="14"/></svg>Workout Plans</a>
+                <div class="dash-nav-section">Account</div>
+                <a href="profile.html" class="dash-nav-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Profile</a>
+                <a href="../index.html" class="dash-nav-item text-[#9090b8] hover:text-white"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Public Site</a>
+            </nav>
+            <div class="mt-auto px-0 pb-1">
+                <div class="bg-[#E8401C]/10 border border-[#E8401C]/25 rounded-2xl p-4 mb-3"><div class="flex items-center justify-between mb-1"><span class="text-white text-xs font-bold">PRO Plan</span><span class="text-[#E8401C] text-[10px] font-black">ACTIVE</span></div><p class="text-[#9090b8] text-[11px] mb-2">Renews Aug 25, 2026</p><div class="w-full bg-white/10 rounded-full h-1.5"><div class="bg-[#E8401C] h-1.5 rounded-full" style="width:72%"></div></div></div>
+                <a href="../login.html" onclick="return confirm('Sign out?')" class="dash-nav-item text-[#9090b8] hover:text-red-400"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sign Out</a>
+            </div>
+        </div>
+    </aside>
+    <div class="dash-overlay" id="dash-overlay" onclick="closeSidebar()"></div>
+
+    <!-- MAIN -->
+    <main class="dash-main">
+        <div class="dash-topbar">
+            <div class="flex items-center gap-3">
+                <button id="sidebar-toggle" onclick="toggleSidebar()" class="dash-menu-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+                <div>
+                    <h1 class="text-lg font-black text-white" style="font-family:'Barlow Condensed',sans-serif;">Attendance History</h1>
+                    <p class="text-[#9090b8] text-xs hidden sm:block">Track your gym visits and class attendance</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <button onclick="toggleTheme()" class="dash-icon-btn"><svg id="dash-theme-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+                <button id="dash-dir-btn" onclick="toggleDir()" class="dash-icon-btn text-[10px] font-black">LTR</button>
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=80&h=80&fit=crop&crop=face" class="w-8 h-8 rounded-full object-cover border-2 border-[#E8401C] cursor-pointer" onclick="window.location.href='profile.html'" alt="Profile">
+            </div>
+        </div>
+
+        <div class="dash-content">
+            <!-- Metric Cards -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="dash-metric-card">
+                    <div class="w-10 h-10 bg-[#E8401C]/15 rounded-xl flex items-center justify-center mb-3"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8401C" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                    <div class="metric-value">26</div>
+                    <div class="metric-label">Total Sessions</div>
+                </div>
+                <div class="dash-metric-card">
+                    <div class="w-10 h-10 bg-[#22c55e]/15 rounded-xl flex items-center justify-center mb-3"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                    <div class="metric-value text-[#22c55e]">85%</div>
+                    <div class="metric-label">Attendance Rate</div>
+                </div>
+                <div class="dash-metric-card">
+                    <div class="w-10 h-10 bg-[#3b82f6]/15 rounded-xl flex items-center justify-center mb-3"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                    <div class="metric-value text-[#3b82f6]">45m</div>
+                    <div class="metric-label">Avg. Session Time</div>
+                </div>
+                <div class="dash-metric-card">
+                    <div class="w-10 h-10 bg-[#f59e0b]/15 rounded-xl flex items-center justify-center mb-3"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+                    <div class="metric-value text-[#f59e0b]">7</div>
+                    <div class="metric-label">Streak (Days)</div>
+                </div>
+            </div>
+
+            <!-- Chart + Calendar -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                <!-- Monthly Chart -->
+                <div class="dash-card">
+                    <h3 class="text-base font-black text-white mb-5" style="font-family:'Barlow Condensed',sans-serif;">ATTENDANCE BY MONTH</h3>
+                    <div style="position:relative;height:200px;">
+                        <canvas id="monthlyChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Class Type Breakdown -->
+                <div class="dash-card">
+                    <h3 class="text-base font-black text-white mb-5" style="font-family:'Barlow Condensed',sans-serif;">CLASS TYPE BREAKDOWN</h3>
+                    <div class="flex items-center gap-6">
+                        <div style="position:relative;height:160px;width:160px;flex-shrink:0;">
+                            <canvas id="typeChart"></canvas>
+                        </div>
+                        <div class="space-y-3 flex-1">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-[#E8401C]"></div><span class="text-[#9090b8] text-xs">HIIT</span></div>
+                                <span class="text-white text-xs font-bold">35%</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-[#22c55e]"></div><span class="text-[#9090b8] text-xs">Yoga</span></div>
+                                <span class="text-white text-xs font-bold">25%</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-[#f59e0b]"></div><span class="text-[#9090b8] text-xs">Boxing</span></div>
+                                <span class="text-white text-xs font-bold">20%</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-[#3b82f6]"></div><span class="text-[#9090b8] text-xs">Spin</span></div>
+                                <span class="text-white text-xs font-bold">15%</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-[#a855f7]"></div><span class="text-[#9090b8] text-xs">Other</span></div>
+                                <span class="text-white text-xs font-bold">5%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Attendance Log Table -->
+            <div class="dash-card">
+                <div class="flex items-center justify-between mb-5">
+                    <h3 class="text-base font-black text-white" style="font-family:'Barlow Condensed',sans-serif;">RECENT SESSIONS</h3>
+                    <select class="bg-white/5 border border-white/10 text-[#9090b8] text-xs px-3 py-2 rounded-xl" id="month-filter">
+                        <option>August 2026</option>
+                        <option>July 2026</option>
+                        <option>June 2026</option>
+                    </select>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-white/10">
+                                <th class="pb-3 text-left text-[11px] font-black uppercase tracking-widest text-[#9090b8]">Date</th>
+                                <th class="pb-3 text-left text-[11px] font-black uppercase tracking-widest text-[#9090b8]">Class</th>
+                                <th class="pb-3 text-left text-[11px] font-black uppercase tracking-widest text-[#9090b8] hidden sm:table-cell">Trainer</th>
+                                <th class="pb-3 text-left text-[11px] font-black uppercase tracking-widest text-[#9090b8] hidden md:table-cell">Duration</th>
+                                <th class="pb-3 text-right text-[11px] font-black uppercase tracking-widest text-[#9090b8]">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5">
+                            <tr class="hover:bg-white/3 transition-colors">
+                                <td class="py-3.5 text-[#9090b8] text-xs">Aug 2, 2026</td>
+                                <td class="py-3.5">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-7 h-7 bg-[#E8401C] rounded-lg flex items-center justify-center text-[9px] font-black text-white">HI</div>
+                                        <span class="text-white text-xs font-bold">HIIT Blast</span>
+                                    </div>
+                                </td>
+                                <td class="py-3.5 text-[#9090b8] text-xs hidden sm:table-cell">Ryan Torres</td>
+                                <td class="py-3.5 text-[#9090b8] text-xs hidden md:table-cell">45 min</td>
+                                <td class="py-3.5 text-right"><span class="bg-[#22c55e]/15 text-[#22c55e] text-[10px] font-black px-2 py-1 rounded-full">Attended</span></td>
+                            </tr>
+                            <tr class="hover:bg-white/3 transition-colors">
+                                <td class="py-3.5 text-[#9090b8] text-xs">Jul 31, 2026</td>
+                                <td class="py-3.5">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-7 h-7 bg-[#22c55e] rounded-lg flex items-center justify-center text-[9px] font-black text-white">YG</div>
+                                        <span class="text-white text-xs font-bold">Power Yoga</span>
+                                    </div>
+                                </td>
+                                <td class="py-3.5 text-[#9090b8] text-xs hidden sm:table-cell">Priya Sharma</td>
+                                <td class="py-3.5 text-[#9090b8] text-xs hidden md:table-cell">60 min</td>
+                                <td class="py-3.5 text-right"><span class="bg-[#22c55e]/15 text-[#22c55e] text-[10px] font-black px-2 py-1 rounded-full">Attended</span></td>
+                            </tr>
+                            <tr class="hover:bg-white/3 transition-colors">
+                                <td class="py-3.5 text-[#9090b8] text-xs">Jul 30, 2026</td>
+                                <td class="py-3.5">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-7 h-7 bg-[#f59e0b] rounded-lg flex items-center justify-center text-[9px] font-black text-white">BX</div>
+                                        <span class="text-white text-xs font-bold">Boxing Fit</span>
+                                    </div>
+                                </td>
+                                <td class="py-3.5 text-[#9090b8] text-xs hidden sm:table-cell">Mike Chen</td>
+                                <td class="py-3.5 text-[#9090b8] text-xs hidden md:table-cell">50 min</td>
+                                <td class="py-3.5 text-right"><span class="bg-[#22c55e]/15 text-[#22c55e] text-[10px] font-black px-2 py-1 rounded-full">Attended</span></td>
+                            </tr>
+                            <tr class="hover:bg-white/3 transition-colors">
+                                <td class="py-3.5 text-[#9090b8] text-xs">Jul 28, 2026</td>
+                                <td class="py-3.5">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-7 h-7 bg-[#3b82f6] rounded-lg flex items-center justify-center text-[9px] font-black text-white">SP</div>
+                                        <span class="text-white text-xs font-bold">Spin Cycle</span>
+                                    </div>
+                                </td>
+                                <td class="py-3.5 text-[#9090b8] text-xs hidden sm:table-cell">Sarah Williams</td>
+                                <td class="py-3.5 text-[#9090b8] text-xs hidden md:table-cell">45 min</td>
+                                <td class="py-3.5 text-right"><span class="bg-red-500/15 text-red-400 text-[10px] font-black px-2 py-1 rounded-full">Absent</span></td>
+                            </tr>
+                            <tr class="hover:bg-white/3 transition-colors">
+                                <td class="py-3.5 text-[#9090b8] text-xs">Jul 26, 2026</td>
+                                <td class="py-3.5">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-7 h-7 bg-[#E8401C] rounded-lg flex items-center justify-center text-[9px] font-black text-white">HI</div>
+                                        <span class="text-white text-xs font-bold">HIIT Blast</span>
+                                    </div>
+                                </td>
+                                <td class="py-3.5 text-[#9090b8] text-xs hidden sm:table-cell">Ryan Torres</td>
+                                <td class="py-3.5 text-[#9090b8] text-xs hidden md:table-cell">45 min</td>
+                                <td class="py-3.5 text-right"><span class="bg-[#22c55e]/15 text-[#22c55e] text-[10px] font-black px-2 py-1 rounded-full">Attended</span></td>
+                            </tr>
+                            <tr class="hover:bg-white/3 transition-colors">
+                                <td class="py-3.5 text-[#9090b8] text-xs">Jul 24, 2026</td>
+                                <td class="py-3.5">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-7 h-7 bg-[#22c55e] rounded-lg flex items-center justify-center text-[9px] font-black text-white">PL</div>
+                                        <span class="text-white text-xs font-bold">Pilates Core</span>
+                                    </div>
+                                </td>
+                                <td class="py-3.5 text-[#9090b8] text-xs hidden sm:table-cell">Priya Sharma</td>
+                                <td class="py-3.5 text-[#9090b8] text-xs hidden md:table-cell">55 min</td>
+                                <td class="py-3.5 text-right"><span class="bg-[#22c55e]/15 text-[#22c55e] text-[10px] font-black px-2 py-1 rounded-full">Attended</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="../components.js"></script>
+<script>
+    document.documentElement.classList.add('dark');
+    if (localStorage.getItem('gym_dir') === 'rtl') {
+        document.documentElement.setAttribute('dir','rtl');
+        const b = document.getElementById('dash-dir-btn');
+        if (b) b.textContent = 'RTL';
+    }
+
+    // Monthly Chart
+    new Chart(document.getElementById('monthlyChart'), {
+        type: 'line',
+        data: {
+            labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'],
+            datasets: [{
+                label: 'Sessions',
+                data: [8,12,10,15,11,14,18,12],
+                borderColor: '#E8401C',
+                backgroundColor: 'rgba(232,64,28,0.1)',
+                borderWidth: 2.5,
+                fill: true,
+                tension: 0.4,
+                pointBackgroundColor: '#E8401C',
+                pointRadius: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9090b8', font: { size: 10 } } },
+                y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9090b8', font: { size: 10 } }, beginAtZero: true }
+            }
+        }
+    });
+
+    // Donut Chart
+    new Chart(document.getElementById('typeChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['HIIT','Yoga','Boxing','Spin','Other'],
+            datasets: [{
+                data: [35,25,20,15,5],
+                backgroundColor: ['#E8401C','#22c55e','#f59e0b','#3b82f6','#a855f7'],
+                borderWidth: 0,
+                hoverOffset: 6
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: '68%',
+            plugins: { legend: { display: false } }
+        }
+    });
+</script>
+</body>
+</html>

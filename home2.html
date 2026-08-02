@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IronPeak Gym & Fitness Center Premium — Elite training, expert coaching, and a world-class facility. Experience fitness redefined.">
+    <title>IronPeak Premium | Fitness Redefined — Home 2</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#E8401C', secondary: '#1A1A2E' } } } }</script>
+    <style>
+        .hero-video-bg {
+            background: linear-gradient(135deg, #0d0d1a 0%, #1a0a0a 50%, #0d0d1a 100%);
+        }
+        .diagonal-section {
+            clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+            padding: 8rem 0;
+            margin: -3rem 0;
+        }
+        .parallax-card {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+        }
+        .parallax-card:hover {
+            transform: translateY(-10px) rotate(-1deg);
+            box-shadow: 0 30px 60px rgba(232,64,28,0.18);
+        }
+        @keyframes slow-zoom { 0%,100%{transform:scale(1.05)} 50%{transform:scale(1.1)} }
+        .animate-slow-zoom { animation: slow-zoom 20s ease-in-out infinite; }
+        .number-ticker {
+            background: linear-gradient(135deg, #E8401C, #ff7a57);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-[#0d0d1a] text-[#0f0f1a] dark:text-[#f0f0ff]">
+
+<div id="main-nav"></div>
+
+<!-- ═══ HERO — GRID OVERLAY STYLE ═══ -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden hero-video-bg">
+    <!-- Grid overlay -->
+    <div class="absolute inset-0" style="background-image:linear-gradient(rgba(232,64,28,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(232,64,28,0.06) 1px,transparent 1px);background-size:60px 60px;"></div>
+
+    <!-- Large image right panel -->
+    <div class="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block">
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=85&fit=crop" alt="Fitness" class="w-full h-full object-cover opacity-25 animate-slow-zoom">
+        <div class="absolute inset-0 bg-gradient-to-l from-transparent to-[#0d0d1a]"></div>
+    </div>
+
+    <!-- Glow -->
+    <div class="bg-orb w-80 h-80 bg-[#E8401C]" style="top:20%;left:10%;opacity:0.12;"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-[116px] pb-32">
+        <div class="max-w-2xl">
+            <!-- Eye-catching label -->
+            <div class="inline-flex items-center gap-3 mb-8 animate-fade-in">
+                <div class="h-px w-12 bg-[#E8401C]"></div>
+                <span class="text-[#E8401C] text-xs font-black uppercase tracking-[0.3em]">Premium Experience</span>
+                <div class="h-px w-12 bg-[#E8401C]"></div>
+            </div>
+
+            <!-- Layered typography -->
+            <div class="overflow-hidden mb-2 animate-fade-in-up" style="animation-delay:0.15s;">
+                <div class="text-[#9090b8] text-lg font-light uppercase tracking-[0.4em]">Welcome to</div>
+            </div>
+            <h1 class="text-8xl md:text-9xl font-black text-white leading-none tracking-tighter mb-2 animate-fade-in-up" style="font-family:'Barlow Condensed',sans-serif;animation-delay:0.25s;">
+                IRON<span class="text-[#E8401C]">PEAK</span>
+            </h1>
+            <div class="text-3xl md:text-4xl font-light text-[#9090b8] tracking-widest uppercase mb-8 animate-fade-in-up" style="animation-delay:0.35s;">GYM & FITNESS CENTER</div>
+
+            <p class="text-[#9090b8] text-lg leading-relaxed mb-10 max-w-lg animate-fade-in-up" style="animation-delay:0.45s;">
+                Elite training environments, world-class coaching, and a premium membership experience that transforms bodies and minds.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 mb-14 animate-fade-in-up" style="animation-delay:0.55s;">
+                <a href="signup.html" class="btn-primary px-10 py-4 text-base">Claim Your Spot</a>
+                <a href="about.html" class="text-white/70 hover:text-white flex items-center gap-2 font-semibold transition-colors px-4">
+                    Our Story
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+
+            <!-- Achievement strip -->
+            <div class="flex flex-wrap gap-6 animate-fade-in-up" style="animation-delay:0.65s;">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-[#E8401C]/15 rounded-lg flex items-center justify-center">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8401C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <span class="text-white/70 text-sm font-medium">No long-term contracts</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-[#E8401C]/15 rounded-lg flex items-center justify-center">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8401C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <span class="text-white/70 text-sm font-medium">7-day free trial</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-[#E8401C]/15 rounded-lg flex items-center justify-center">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8401C" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <span class="text-white/70 text-sm font-medium">Personal trainer included</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating achievement cards -->
+    <div class="hidden xl:block absolute right-12 top-1/3 z-20">
+        <div class="bg-white/10 backdrop-blur-xl border border-white/15 rounded-2xl p-5 parallax-card mb-4 min-w-[200px]">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-[#E8401C] rounded-xl flex items-center justify-center">
+                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div>
+                    <p class="text-2xl font-black text-white" style="font-family:'Barlow Condensed',sans-serif;">2,400+</p>
+                    <p class="text-white/60 text-xs">Active Members</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-[#E8401C]/90 backdrop-blur-xl border border-white/15 rounded-2xl p-5 parallax-card ml-6 min-w-[180px]">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
+                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <div>
+                    <p class="text-2xl font-black text-white" style="font-family:'Barlow Condensed',sans-serif;">4.9 / 5</p>
+                    <p class="text-white/80 text-xs">Member Rating</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ HORIZONTAL SCROLL STATS ═══ -->
+<div id="stats-section" class="bg-[#E8401C] py-0">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4">
+            <div class="py-10 px-8 border-r border-white/20 text-center">
+                <div class="text-5xl font-black text-white number-ticker mb-1" style="font-family:'Barlow Condensed',sans-serif;-webkit-text-fill-color:white;" data-count="2400" data-suffix="+">0+</div>
+                <p class="text-white/80 text-sm font-medium uppercase tracking-wider">Members</p>
+            </div>
+            <div class="py-10 px-8 border-r border-white/20 text-center">
+                <div class="text-5xl font-black text-white mb-1" style="font-family:'Barlow Condensed',sans-serif;" data-count="50" data-suffix="+">0+</div>
+                <p class="text-white/80 text-sm font-medium uppercase tracking-wider">Classes/Week</p>
+            </div>
+            <div class="py-10 px-8 border-r border-white/20 text-center">
+                <div class="text-5xl font-black text-white mb-1" style="font-family:'Barlow Condensed',sans-serif;" data-count="18" data-suffix="">0</div>
+                <p class="text-white/80 text-sm font-medium uppercase tracking-wider">Trainers</p>
+            </div>
+            <div class="py-10 px-8 text-center">
+                <div class="text-5xl font-black text-white mb-1" style="font-family:'Barlow Condensed',sans-serif;" data-count="12" data-suffix=" yrs">0 yrs</div>
+                <p class="text-white/80 text-sm font-medium uppercase tracking-wider">Excellence</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ EXPERIENCE SECTION — DIAGONAL ═══ -->
+<section class="py-28 bg-[#f7f7fc] dark:bg-[#13132a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <!-- Image collage -->
+            <div class="relative h-[500px] reveal-left">
+                <div class="absolute top-0 left-0 w-3/5 h-3/5 rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80&fit=crop" alt="Gym floor" class="w-full h-full object-cover animate-slow-zoom">
+                </div>
+                <div class="absolute bottom-0 right-0 w-3/5 h-3/5 rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80&fit=crop" alt="Training" class="w-full h-full object-cover animate-slow-zoom">
+                </div>
+                <!-- Badge -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#E8401C] text-white rounded-2xl p-5 text-center shadow-2xl z-10">
+                    <div class="text-4xl font-black" style="font-family:'Barlow Condensed',sans-serif;">12</div>
+                    <div class="text-xs font-bold uppercase tracking-wider">Years Strong</div>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="reveal-right">
+                <span class="section-label mb-5">Our Mission</span>
+                <h2 class="text-5xl md:text-6xl font-black text-[#1A1A2E] dark:text-white mt-4 mb-6 tracking-tight leading-tight" style="font-family:'Barlow Condensed',sans-serif;">A GYM BUILT<br>FOR <span class="text-[#E8401C]">RESULTS</span></h2>
+                <p class="text-[#5a5a7a] dark:text-[#9090b8] text-base leading-relaxed mb-6">
+                    IronPeak was founded on a simple belief: everyone deserves access to premium fitness facilities without the premium price tag. We've built a community where beginners and elite athletes train side-by-side, pushing each other to new heights.
+                </p>
+                <p class="text-[#5a5a7a] dark:text-[#9090b8] text-base leading-relaxed mb-8">
+                    Our state-of-the-art equipment, diverse class schedule, and team of certified trainers create the perfect environment for your transformation.
+                </p>
+
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-[#E8401C]"></div>
+                        <span class="text-sm font-medium text-[#1A1A2E] dark:text-white">Premium Equipment</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-[#E8401C]"></div>
+                        <span class="text-sm font-medium text-[#1A1A2E] dark:text-white">Expert Coaching</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-[#E8401C]"></div>
+                        <span class="text-sm font-medium text-[#1A1A2E] dark:text-white">50+ Weekly Classes</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-[#E8401C]"></div>
+                        <span class="text-sm font-medium text-[#1A1A2E] dark:text-white">24/7 Access</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-[#E8401C]"></div>
+                        <span class="text-sm font-medium text-[#1A1A2E] dark:text-white">Member Dashboard</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-[#E8401C]"></div>
+                        <span class="text-sm font-medium text-[#1A1A2E] dark:text-white">Nutrition Support</span>
+                    </div>
+                </div>
+
+                <a href="about.html" class="btn-primary px-8 py-4">Discover Our Story</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CLASSES — HORIZONTAL SCROLL CARDS ═══ -->
+<section class="py-24 bg-white dark:bg-[#0d0d1a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14 reveal">
+            <span class="section-label mb-4">Class Schedule</span>
+            <h2 class="text-5xl md:text-6xl font-black text-[#1A1A2E] dark:text-white mt-4 tracking-tight" style="font-family:'Barlow Condensed',sans-serif;">THIS WEEK'S<br><span class="text-[#E8401C]">FEATURED CLASSES</span></h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 stagger-container">
+            <div class="stagger-item rounded-2xl overflow-hidden bg-[#0d0d1a] relative group cursor-pointer" style="min-height:320px;">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80&fit=crop" alt="HIIT" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 group-hover:scale-105 transition-all duration-500">
+                <div class="relative z-10 p-6 h-full flex flex-col justify-between" style="min-height:320px;">
+                    <div>
+                        <span class="badge badge-primary mb-3">Mon · 6 AM</span>
+                        <h3 class="text-2xl font-black text-white" style="font-family:'Barlow Condensed',sans-serif;">HIIT BLAST</h3>
+                        <p class="text-white/60 text-xs mt-1">45 min · Ryan Torres</p>
+                    </div>
+                    <a href="login.html" class="btn-primary text-xs w-full text-center py-2.5" style="padding:0.6rem;">Book Now</a>
+                </div>
+            </div>
+            <div class="stagger-item rounded-2xl overflow-hidden bg-[#0d0d1a] relative group cursor-pointer" style="min-height:320px;">
+                <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=400&q=80&fit=crop" alt="Yoga" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 group-hover:scale-105 transition-all duration-500">
+                <div class="relative z-10 p-6 h-full flex flex-col justify-between" style="min-height:320px;">
+                    <div>
+                        <span class="badge badge-success mb-3">Tue · 7 AM</span>
+                        <h3 class="text-2xl font-black text-white" style="font-family:'Barlow Condensed',sans-serif;">POWER YOGA</h3>
+                        <p class="text-white/60 text-xs mt-1">60 min · Priya Sharma</p>
+                    </div>
+                    <a href="login.html" class="btn-primary text-xs w-full text-center py-2.5" style="padding:0.6rem;">Book Now</a>
+                </div>
+            </div>
+            <div class="stagger-item rounded-2xl overflow-hidden bg-[#0d0d1a] relative group cursor-pointer" style="min-height:320px;">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80&fit=crop" alt="Boxing" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 group-hover:scale-105 transition-all duration-500">
+                <div class="relative z-10 p-6 h-full flex flex-col justify-between" style="min-height:320px;">
+                    <div>
+                        <span class="badge badge-warning mb-3">Wed · 5:30 PM</span>
+                        <h3 class="text-2xl font-black text-white" style="font-family:'Barlow Condensed',sans-serif;">BOXING FIT</h3>
+                        <p class="text-white/60 text-xs mt-1">50 min · Mike Chen</p>
+                    </div>
+                    <a href="login.html" class="btn-primary text-xs w-full text-center py-2.5" style="padding:0.6rem;">Book Now</a>
+                </div>
+            </div>
+            <div class="stagger-item rounded-2xl overflow-hidden bg-[#0d0d1a] relative group cursor-pointer" style="min-height:320px;">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=80&fit=crop" alt="Spin" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 group-hover:scale-105 transition-all duration-500">
+                <div class="relative z-10 p-6 h-full flex flex-col justify-between" style="min-height:320px;">
+                    <div>
+                        <span class="badge badge-info mb-3">Thu · 6:30 PM</span>
+                        <h3 class="text-2xl font-black text-white" style="font-family:'Barlow Condensed',sans-serif;">SPIN CYCLE</h3>
+                        <p class="text-white/60 text-xs mt-1">45 min · Sarah Williams</p>
+                    </div>
+                    <a href="login.html" class="btn-primary text-xs w-full text-center py-2.5" style="padding:0.6rem;">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-10 reveal">
+            <a href="classes.html" class="btn-secondary px-10 py-4">View Full Schedule →</a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ TRAINER SPOTLIGHT ═══ -->
+<section class="py-24 bg-[#f7f7fc] dark:bg-[#13132a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            <div class="reveal-right order-last lg:order-first">
+                <span class="section-label mb-4">Coach Spotlight</span>
+                <h2 class="text-5xl md:text-6xl font-black text-[#1A1A2E] dark:text-white mt-4 mb-6 tracking-tight" style="font-family:'Barlow Condensed',sans-serif;">TRAIN WITH THE <span class="text-[#E8401C]">BEST</span></h2>
+                <p class="text-[#5a5a7a] dark:text-[#9090b8] text-base leading-relaxed mb-8">Our trainers aren't just coaches — they're athletes, motivators, and life-changers. Each one brings specialized expertise and a passion for helping you reach your full potential.</p>
+
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="bg-white dark:bg-[#1a1a35] border border-[#ebebf5] dark:border-[#252545] rounded-2xl p-5 text-center">
+                        <div class="text-3xl font-black text-[#E8401C] mb-1" style="font-family:'Barlow Condensed',sans-serif;">18</div>
+                        <p class="text-[#5a5a7a] dark:text-[#9090b8] text-xs font-medium">Certified Trainers</p>
+                    </div>
+                    <div class="bg-white dark:bg-[#1a1a35] border border-[#ebebf5] dark:border-[#252545] rounded-2xl p-5 text-center">
+                        <div class="text-3xl font-black text-[#E8401C] mb-1" style="font-family:'Barlow Condensed',sans-serif;">12</div>
+                        <p class="text-[#5a5a7a] dark:text-[#9090b8] text-xs font-medium">Specializations</p>
+                    </div>
+                </div>
+
+                <a href="trainers.html" class="btn-primary px-8 py-4">Meet All Trainers</a>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 reveal-left">
+                <div class="rounded-2xl overflow-hidden h-72 img-zoom">
+                    <img src="https://images.unsplash.com/photo-1611672585731-fa10603fb9e0?w=400&q=80&fit=crop&crop=top" alt="Trainer" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-2xl overflow-hidden h-72 img-zoom mt-8">
+                    <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=400&q=80&fit=crop&crop=top" alt="Trainer" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-2xl overflow-hidden h-72 img-zoom -mt-8">
+                    <img src="https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?w=400&q=80&fit=crop&crop=top" alt="Trainer" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-2xl overflow-hidden h-72 img-zoom">
+                    <img src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?w=400&q=80&fit=crop&crop=top" alt="Trainer" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ PRICING HIGHLIGHT ═══ -->
+<section class="py-24 bg-[#1A1A2E] dark:bg-[#0d0d1a]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+        <span class="section-label mb-4" style="background:rgba(232,64,28,0.15);border-color:rgba(232,64,28,0.35);">Simple Pricing</span>
+        <h2 class="text-5xl md:text-6xl font-black text-white mt-4 mb-6 tracking-tight" style="font-family:'Barlow Condensed',sans-serif;">ONE PRICE,<br><span class="text-[#E8401C]">UNLIMITED ACCESS</span></h2>
+        <p class="text-[#9090b8] text-lg mb-10">Start with a 7-day free trial, then choose a plan that fits your lifestyle. Cancel anytime.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all">
+                <h3 class="text-2xl font-black text-white mb-2" style="font-family:'Barlow Condensed',sans-serif;">BASIC</h3>
+                <div class="text-4xl font-black text-white mb-1" style="font-family:'Barlow Condensed',sans-serif;">$29<span class="text-base font-normal text-[#9090b8]">/mo</span></div>
+                <ul class="space-y-2 my-5 text-[#9090b8] text-sm">
+                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Gym floor access</li>
+                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>4 group classes/mo</li>
+                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Locker access</li>
+                </ul>
+                <a href="pricing.html" class="btn-secondary w-full text-center py-3 border-white/20 text-white hover:bg-white hover:text-[#1A1A2E]">Get Started</a>
+            </div>
+            <div class="bg-[#E8401C] rounded-2xl p-6 relative shadow-2xl">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-white text-[#E8401C] text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">Most Popular</div>
+                <h3 class="text-2xl font-black text-white mb-2" style="font-family:'Barlow Condensed',sans-serif;">PRO</h3>
+                <div class="text-4xl font-black text-white mb-1" style="font-family:'Barlow Condensed',sans-serif;">$59<span class="text-base font-normal text-white/70">/mo</span></div>
+                <ul class="space-y-2 my-5 text-white/80 text-sm">
+                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Everything in Basic</li>
+                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Unlimited classes</li>
+                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>1 PT session/mo</li>
+                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Workout plan access</li>
+                </ul>
+                <a href="signup.html" class="bg-white text-[#E8401C] font-black text-sm py-3 rounded-xl w-full text-center uppercase tracking-wide block hover:bg-[#fff0ee] transition-all">Join Now</a>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all">
+                <h3 class="text-2xl font-black text-white mb-2" style="font-family:'Barlow Condensed',sans-serif;">ELITE</h3>
+                <div class="text-4xl font-black text-white mb-1" style="font-family:'Barlow Condensed',sans-serif;">$99<span class="text-base font-normal text-[#9090b8]">/mo</span></div>
+                <ul class="space-y-2 my-5 text-[#9090b8] text-sm">
+                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Everything in Pro</li>
+                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>4 PT sessions/mo</li>
+                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Nutrition coaching</li>
+                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>VIP lounge access</li>
+                </ul>
+                <a href="pricing.html" class="btn-secondary w-full text-center py-3 border-white/20 text-white hover:bg-white hover:text-[#1A1A2E]">Get Elite</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CTA BAND ═══ -->
+<section class="relative py-24 bg-white dark:bg-[#0d0d1a] overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-[#1A1A2E] dark:bg-[#13132a] rounded-3xl p-10 md:p-16 relative overflow-hidden reveal">
+            <div class="bg-orb w-64 h-64 bg-[#E8401C]" style="top:-20%;right:5%;opacity:0.12;"></div>
+            <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-black text-white mb-3" style="font-family:'Barlow Condensed',sans-serif;">START YOUR TRANSFORMATION TODAY</h2>
+                    <p class="text-[#9090b8] text-base">7 days free. No credit card required. Cancel anytime.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 flex-shrink-0">
+                    <a href="signup.html" class="btn-primary px-8 py-4">Start Free Trial</a>
+                    <a href="contact.html" class="btn-secondary border-white/30 text-white px-8 py-4 hover:bg-white hover:text-[#1A1A2E]">Talk to Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="main-footer"></div>
+
+<button id="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script src="components.js"></script>
+</body>
+</html>

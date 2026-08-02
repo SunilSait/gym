@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page not found — IronPeak Gym & Fitness Center. Let's get you back on track.">
+    <title>404 — Page Not Found | IronPeak Gym</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#E8401C', secondary: '#1A1A2E' } } } }</script>
+</head>
+<body class="min-h-screen bg-gradient-mesh flex items-start justify-center overflow-x-hidden overflow-y-auto relative text-[#0f0f1a] dark:text-[#f0f0ff]">
+
+    <!-- Ghost 404 background -->
+    <div class="fixed inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none z-0">
+        <div class="text-[18rem] md:text-[26rem] font-black text-[#1A1A2E] dark:text-white leading-none" style="font-family:'Barlow Condensed',sans-serif;">404</div>
+    </div>
+
+    <!-- Floating decorative dumbbells -->
+    <div class="fixed top-24 left-10 animate-float opacity-10 hidden md:block z-0" style="animation-duration:6s;">
+        <svg width="80" height="36" viewBox="0 0 100 45" fill="none">
+            <rect x="10" y="16" width="80" height="13" rx="3" fill="#E8401C"/>
+            <rect x="5" y="8" width="14" height="29" rx="4" fill="#E8401C"/>
+            <rect x="81" y="8" width="14" height="29" rx="4" fill="#E8401C"/>
+            <rect x="0" y="12" width="9" height="21" rx="3" fill="#C4341A"/>
+            <rect x="91" y="12" width="9" height="21" rx="3" fill="#C4341A"/>
+        </svg>
+    </div>
+    <div class="fixed bottom-24 right-14 animate-float opacity-10 hidden md:block z-0" style="animation-duration:8s;animation-delay:1s;">
+        <svg width="50" height="22" viewBox="0 0 100 45" fill="none">
+            <rect x="10" y="16" width="80" height="13" rx="3" fill="#E8401C"/>
+            <rect x="5" y="8" width="14" height="29" rx="4" fill="#E8401C"/>
+            <rect x="81" y="8" width="14" height="29" rx="4" fill="#E8401C"/>
+        </svg>
+    </div>
+
+    <!-- Auth Top Bar -->
+    <div class="flex items-center justify-end p-4 sm:p-6 w-full absolute top-0 left-0 z-50">
+        <div class="flex items-center gap-2">
+            <button id="err-dir-btn" onclick="toggleDir()" class="w-9 h-9 flex items-center justify-center rounded-lg bg-[#1A1A2E]/10 dark:bg-white/10 border border-[#1A1A2E]/15 dark:border-white/15 text-[10px] font-black text-[#1A1A2E]/70 dark:text-white/60 hover:text-[#E8401C] transition-all">LTR</button>
+            <button onclick="toggleTheme()" class="w-9 h-9 flex items-center justify-center rounded-lg bg-[#1A1A2E]/10 dark:bg-white/10 border border-[#1A1A2E]/15 dark:border-white/15 text-[#1A1A2E]/70 dark:text-white/60 hover:text-[#E8401C] transition-all" aria-label="Toggle theme">
+                <span id="err-theme-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="relative z-10 text-center px-4 max-w-xl mx-auto py-20">
+        <!-- Logo -->
+        <a href="index.html" class="inline-flex items-center gap-2.5 mb-10 logo-bounce" aria-label="IronPeak Home">
+            <div class="w-10 h-10 bg-[#E8401C] rounded-xl flex items-center justify-center shadow-md shrink-0">
+                <svg width="22" height="22" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="42" width="80" height="16" rx="4" fill="white" opacity="0.95"/>
+                    <rect x="6" y="28" width="16" height="44" rx="5" fill="white" opacity="0.9"/>
+                    <rect x="78" y="28" width="16" height="44" rx="5" fill="white" opacity="0.9"/>
+                    <rect x="0" y="35" width="10" height="30" rx="4" fill="white" opacity="0.7"/>
+                    <rect x="90" y="35" width="10" height="30" rx="4" fill="white" opacity="0.7"/>
+                </svg>
+            </div>
+            <div class="flex flex-col leading-none text-left">
+                <span class="font-black text-[#1A1A2E] dark:text-white text-base tracking-tight" style="font-family:'Barlow Condensed',sans-serif;">IRON<span class="text-[#E8401C]">PEAK</span></span>
+                <span class="font-semibold text-[#5a5a7a] dark:text-[#9090b8] text-[10px] tracking-widest uppercase">Gym & Fitness</span>
+            </div>
+        </a>
+
+        <!-- Bouncing Dumbbell -->
+        <div class="relative w-36 h-36 mx-auto mb-8 flex items-center justify-center">
+            <div class="animate-dumbbell z-10">
+                <svg width="100" height="46" viewBox="0 0 100 46" fill="none">
+                    <rect x="10" y="16" width="80" height="14" rx="4" fill="#E8401C"/>
+                    <rect x="5" y="6" width="16" height="34" rx="5" fill="#C4341A"/>
+                    <rect x="79" y="6" width="16" height="34" rx="5" fill="#C4341A"/>
+                    <rect x="0" y="11" width="10" height="24" rx="4" fill="#E8401C"/>
+                    <rect x="90" y="11" width="10" height="24" rx="4" fill="#E8401C"/>
+                </svg>
+            </div>
+            <div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-20 h-2 bg-black/15 dark:bg-black/40 rounded-full shadow-pulse blur-sm z-0"></div>
+        </div>
+
+        <div class="text-[#E8401C] text-sm font-black uppercase tracking-[0.3em] mb-4">404 Error</div>
+        <h1 class="text-5xl md:text-7xl font-black text-[#1A1A2E] dark:text-white tracking-tighter mb-6" style="font-family:'Barlow Condensed',sans-serif;">
+            DROPPED THE<br><span class="text-[#E8401C]">REP</span>
+        </h1>
+        <p class="text-[#5a5a7a] dark:text-[#9090b8] text-lg mb-12 leading-relaxed">
+            Looks like this page missed its workout. It may have been moved or doesn't exist. Let's get you back to training!
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="index.html" class="w-full sm:w-auto btn-primary px-8 py-4 flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                Back to Home
+            </a>
+            <a href="contact.html" class="w-full sm:w-auto bg-white dark:bg-white/5 border border-[#e2e2ef] dark:border-white/15 text-[#1A1A2E] dark:text-white px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-wide hover:bg-[#f7f7fc] dark:hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.44 2 2 0 0 1 3.6 2.24h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.72 17z"/></svg>
+                Contact Us
+            </a>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="mt-12 pt-8 border-t border-[#e2e2ef] dark:border-white/10 max-w-sm mx-auto">
+            <p class="text-xs font-black uppercase tracking-widest text-[#5a5a7a] dark:text-[#9090b8] mb-4">Quick Navigation</p>
+            <div class="grid grid-cols-2 gap-3">
+                <a href="classes.html" class="p-3 bg-white dark:bg-white/5 border border-[#e2e2ef] dark:border-white/10 rounded-xl hover:border-[#E8401C]/40 hover:bg-[#f7f7fc] dark:hover:bg-white/10 transition-all text-xs font-bold text-[#1A1A2E] dark:text-[#f0f0ff] flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#E8401C" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    Classes
+                </a>
+                <a href="trainers.html" class="p-3 bg-white dark:bg-white/5 border border-[#e2e2ef] dark:border-white/10 rounded-xl hover:border-[#E8401C]/40 hover:bg-[#f7f7fc] dark:hover:bg-white/10 transition-all text-xs font-bold text-[#1A1A2E] dark:text-[#f0f0ff] flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#E8401C" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                    Trainers
+                </a>
+                <a href="pricing.html" class="p-3 bg-white dark:bg-white/5 border border-[#e2e2ef] dark:border-white/10 rounded-xl hover:border-[#E8401C]/40 hover:bg-[#f7f7fc] dark:hover:bg-white/10 transition-all text-xs font-bold text-[#1A1A2E] dark:text-[#f0f0ff] flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#E8401C" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    Pricing
+                </a>
+                <a href="login.html" class="p-3 bg-white dark:bg-white/5 border border-[#e2e2ef] dark:border-white/10 rounded-xl hover:border-[#E8401C]/40 hover:bg-[#f7f7fc] dark:hover:bg-white/10 transition-all text-xs font-bold text-[#1A1A2E] dark:text-[#f0f0ff] flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#E8401C" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+                    Sign In
+                </a>
+            </div>
+        </div>
+    </div>
+
+<script src="components.js"></script>
+<script>
+    if (localStorage.getItem('gym_theme') === 'dark' || (!localStorage.getItem('gym_theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+    }
+    if (localStorage.getItem('gym_dir') === 'rtl') {
+        document.documentElement.setAttribute('dir', 'rtl');
+        const d = document.getElementById('err-dir-btn');
+        if (d) d.textContent = 'RTL';
+    }
+</script>
+</body>
+</html>

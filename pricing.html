@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IronPeak Gym Membership Pricing — Flexible plans for every budget. Basic, Pro, and Elite memberships with 7-day free trial.">
+    <title>Membership Pricing | IronPeak Gym & Fitness</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#E8401C', secondary: '#1A1A2E' } } } }</script>
+</head>
+<body class="bg-white dark:bg-[#0d0d1a] text-[#0f0f1a] dark:text-[#f0f0ff]">
+<div id="main-nav"></div>
+
+<!-- HERO -->
+<section class="relative py-24 bg-[#1A1A2E] overflow-hidden">
+    <div class="bg-orb w-96 h-96 bg-[#E8401C]" style="top:-10%;right:-5%;"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
+        <span class="section-label mb-4" style="background:rgba(232,64,28,0.15);border-color:rgba(232,64,28,0.35);">Simple Pricing</span>
+        <h1 class="text-6xl md:text-8xl font-black text-white mt-4 tracking-tight" style="font-family:'Barlow Condensed',sans-serif;">MEMBERSHIP <span class="text-[#E8401C]">PLANS</span></h1>
+        <p class="text-[#9090b8] text-lg mt-4 max-w-xl mx-auto">Start with a 7-day free trial. No credit card required. Cancel anytime with no fees.</p>
+    </div>
+</section>
+
+<!-- PRICING CARDS -->
+<section class="py-24 bg-white dark:bg-[#0d0d1a]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-container items-start">
+
+            <!-- Basic -->
+            <div class="pricing-card stagger-item">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-12 h-12 bg-[#f7f7fc] dark:bg-[#252545] rounded-2xl flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#5a5a7a" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black text-[#1A1A2E] dark:text-white" style="font-family:'Barlow Condensed',sans-serif;">BASIC</h3>
+                        <p class="text-[#5a5a7a] dark:text-[#9090b8] text-xs">Perfect for beginners</p>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <div class="text-5xl font-black text-[#1A1A2E] dark:text-white mb-1" style="font-family:'Barlow Condensed',sans-serif;">$29<span class="text-xl font-normal text-[#5a5a7a] dark:text-[#9090b8]">/mo</span></div>
+                    <p class="text-[#5a5a7a] dark:text-[#9090b8] text-sm">Billed monthly · No contract</p>
+                </div>
+
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-3 text-sm text-[#1A1A2E] dark:text-[#f0f0ff]">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Full gym floor access
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-[#1A1A2E] dark:text-[#f0f0ff]">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        4 group classes per month
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-[#1A1A2E] dark:text-[#f0f0ff]">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Locker room access
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-[#1A1A2E] dark:text-[#f0f0ff]">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        Member dashboard
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-[#5a5a7a] dark:text-[#9090b8] opacity-50">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                        Personal training sessions
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-[#5a5a7a] dark:text-[#9090b8] opacity-50">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                        Nutrition coaching
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-[#5a5a7a] dark:text-[#9090b8] opacity-50">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                        VIP lounge
+                    </li>
+                </ul>
+
+                <a href="signup.html" class="btn-secondary w-full text-center py-4">Start Free Trial</a>
+            </div>
+
+            <!-- Pro — Popular -->
+            <div class="pricing-card popular stagger-item relative">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#E8401C] text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+                    ⭐ Most Popular
+                </div>
+                <div class="flex items-center gap-3 mb-6 mt-2">
+                    <div class="w-12 h-12 bg-[#E8401C] rounded-2xl flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black text-[#1A1A2E] dark:text-white" style="font-family:'Barlow Condensed',sans-serif;">PRO</h3>
+                        <p class="text-[#5a5a7a] dark:text-[#9090b8] text-xs">Best for dedicated athletes</p>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <div class="text-5xl font-black text-[#1A1A2E] dark:text-white mb-1" style="font-family:'Barlow Condensed',sans-serif;">$59<span class="text-xl font-normal text-[#5a5a7a] dark:text-[#9090b8]">/mo</span></div>
+                    <p class="text-[#5a5a7a] dark:text-[#9090b8] text-sm">Billed monthly · No contract</p>
+                </div>
+
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-3 text-sm text-[#1A1A2E] dark:text-[#f0f0ff]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Everything in Basic</li>
+                    <li class="flex items-center gap-3 text-sm text-[#1A1A2E] dark:text-[#f0f0ff]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Unlimited group classes</li>
+                    <li class="flex items-center gap-3 text-sm text-[#1A1A2E] dark:text-[#f0f0ff]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>1 PT session per month</li>
+                    <li class="flex items-center gap-3 text-sm text-[#1A1A2E] dark:text-[#f0f0ff]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Trainer workout plan</li>
+                    <li class="flex items-center gap-3 text-sm text-[#1A1A2E] dark:text-[#f0f0ff]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Attendance tracking</li>
+                    <li class="flex items-center gap-3 text-sm text-[#1A1A2E] dark:text-[#f0f0ff]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Guest pass (1/mo)</li>
+                    <li class="flex items-center gap-3 text-sm text-[#5a5a7a] dark:text-[#9090b8] opacity-50"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>VIP lounge</li>
+                </ul>
+
+                <a href="signup.html" class="btn-primary w-full text-center py-4">Start Free Trial</a>
+            </div>
+
+            <!-- Elite -->
+            <div class="pricing-card stagger-item">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-12 h-12 bg-[#1A1A2E] dark:bg-[#252545] rounded-2xl flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#E8401C" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black text-[#1A1A2E] dark:text-white" style="font-family:'Barlow Condensed',sans-serif;">ELITE</h3>
+                        <p class="text-[#5a5a7a] dark:text-[#9090b8] text-xs">For serious transformation</p>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <div class="text-5xl font-black text-[#1A1A2E] dark:text-white mb-1" style="font-family:'Barlow Condensed',sans-serif;">$99<span class="text-xl font-normal text-[#5a5a7a] dark:text-[#9090b8]">/mo</span></div>
+                    <p class="text-[#5a5a7a] dark:text-[#9090b8] text-sm">Billed monthly · No contract</p>
+                </div>
+
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-3 text-sm text-[#1A1A2E] dark:text-[#f0f0ff]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Everything in Pro</li>
+                    <li class="flex items-center gap-3 text-sm text-[#1A1A2E] dark:text-[#f0f0ff]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>4 PT sessions per month</li>
+                    <li class="flex items-center gap-3 text-sm text-[#1A1A2E] dark:text-[#f0f0ff]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Nutrition coaching</li>
+                    <li class="flex items-center gap-3 text-sm text-[#1A1A2E] dark:text-[#f0f0ff]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>VIP lounge access</li>
+                    <li class="flex items-center gap-3 text-sm text-[#1A1A2E] dark:text-[#f0f0ff]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Body composition analysis</li>
+                    <li class="flex items-center gap-3 text-sm text-[#1A1A2E] dark:text-[#f0f0ff]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Unlimited guest passes</li>
+                    <li class="flex items-center gap-3 text-sm text-[#1A1A2E] dark:text-[#f0f0ff]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Priority class booking</li>
+                </ul>
+
+                <a href="signup.html" class="btn-secondary w-full text-center py-4">Start Free Trial</a>
+            </div>
+        </div>
+
+        <!-- Trust signals -->
+        <div class="mt-14 text-center">
+            <p class="text-[#5a5a7a] dark:text-[#9090b8] text-sm mb-4">All plans include a 7-day free trial. No credit card required to start.</p>
+            <div class="flex flex-wrap justify-center gap-8">
+                <div class="flex items-center gap-2 text-[#5a5a7a] dark:text-[#9090b8] text-xs font-medium">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    No cancellation fees
+                </div>
+                <div class="flex items-center gap-2 text-[#5a5a7a] dark:text-[#9090b8] text-xs font-medium">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Pause anytime
+                </div>
+                <div class="flex items-center gap-2 text-[#5a5a7a] dark:text-[#9090b8] text-xs font-medium">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Upgrade or downgrade anytime
+                </div>
+                <div class="flex items-center gap-2 text-[#5a5a7a] dark:text-[#9090b8] text-xs font-medium">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    Secure payment
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-24 bg-[#f7f7fc] dark:bg-[#13132a]">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 reveal">
+            <span class="section-label mb-4">FAQ</span>
+            <h2 class="text-5xl font-black text-[#1A1A2E] dark:text-white mt-4" style="font-family:'Barlow Condensed',sans-serif;">FREQUENTLY ASKED <span class="text-[#E8401C]">QUESTIONS</span></h2>
+        </div>
+
+        <div class="space-y-3">
+            <div class="bg-white dark:bg-[#1a1a35] border border-[#ebebf5] dark:border-[#252545] rounded-2xl overflow-hidden reveal">
+                <button onclick="toggleAccordion(this)" class="w-full px-6 py-5 text-left flex items-center justify-between font-bold text-[#1A1A2E] dark:text-white text-sm">
+                    Is there really no credit card required for the free trial?
+                    <svg data-acc-icon width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 transition-transform"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="accordion-content px-6 text-[#5a5a7a] dark:text-[#9090b8] text-sm leading-relaxed"><div class="pb-5">Correct! Your 7-day free trial requires no payment information. We believe you should experience IronPeak before committing to anything.</div></div>
+            </div>
+            <div class="bg-white dark:bg-[#1a1a35] border border-[#ebebf5] dark:border-[#252545] rounded-2xl overflow-hidden reveal">
+                <button onclick="toggleAccordion(this)" class="w-full px-6 py-5 text-left flex items-center justify-between font-bold text-[#1A1A2E] dark:text-white text-sm">
+                    Can I change my plan after signing up?
+                    <svg data-acc-icon width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 transition-transform"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="accordion-content px-6 text-[#5a5a7a] dark:text-[#9090b8] text-sm leading-relaxed"><div class="pb-5">Yes, absolutely! You can upgrade, downgrade, or cancel your membership at any time from your member dashboard. Changes take effect at the next billing cycle.</div></div>
+            </div>
+            <div class="bg-white dark:bg-[#1a1a35] border border-[#ebebf5] dark:border-[#252545] rounded-2xl overflow-hidden reveal">
+                <button onclick="toggleAccordion(this)" class="w-full px-6 py-5 text-left flex items-center justify-between font-bold text-[#1A1A2E] dark:text-white text-sm">
+                    What is included in the group classes?
+                    <svg data-acc-icon width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 transition-transform"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="accordion-content px-6 text-[#5a5a7a] dark:text-[#9090b8] text-sm leading-relaxed"><div class="pb-5">All group classes include HIIT, Yoga, Pilates, Boxing, Spin, Strength & Conditioning, and more. Classes are led by certified trainers and run 45–60 minutes each.</div></div>
+            </div>
+            <div class="bg-white dark:bg-[#1a1a35] border border-[#ebebf5] dark:border-[#252545] rounded-2xl overflow-hidden reveal">
+                <button onclick="toggleAccordion(this)" class="w-full px-6 py-5 text-left flex items-center justify-between font-bold text-[#1A1A2E] dark:text-white text-sm">
+                    Do you offer corporate or family memberships?
+                    <svg data-acc-icon width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 transition-transform"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="accordion-content px-6 text-[#5a5a7a] dark:text-[#9090b8] text-sm leading-relaxed"><div class="pb-5">Yes! We offer discounted corporate memberships for teams of 5+, and family plans for households. Contact us at contact@ironpeakgym.com for custom pricing.</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="main-footer"></div>
+<button id="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<script src="components.js"></script>
+</body>
+</html>
