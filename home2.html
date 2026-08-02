@@ -6,6 +6,9 @@
     <meta name="description" content="IronPeak Gym & Fitness Center Premium — Elite training, expert coaching, and a world-class facility. Experience fitness redefined.">
     <title>IronPeak Premium | Fitness Redefined — Home 2</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#E8401C', secondary: '#1A1A2E' } } } }</script>
@@ -66,7 +69,7 @@
             <div class="overflow-hidden mb-2 animate-fade-in-up" style="animation-delay:0.15s;">
                 <div class="text-[#9090b8] text-lg font-light uppercase tracking-[0.4em]">Welcome to</div>
             </div>
-            <h1 class="text-8xl md:text-9xl font-black text-white leading-none tracking-tighter mb-2 animate-fade-in-up" style="font-family:'Barlow Condensed',sans-serif;animation-delay:0.25s;">
+            <h1 class="text-8xl md:text-9xl font-black text-white leading-none tracking-tight mb-2 animate-fade-in-up" style="font-family:'Barlow Condensed',sans-serif;animation-delay:0.25s;">
                 IRON<span class="text-[#E8401C]">PEAK</span>
             </h1>
             <div class="text-3xl md:text-4xl font-light text-[#9090b8] tracking-widest uppercase mb-8 animate-fade-in-up" style="animation-delay:0.35s;">GYM & FITNESS CENTER</div>
@@ -330,39 +333,45 @@
         <h2 class="text-5xl md:text-6xl font-black text-white mt-4 mb-6 tracking-tight" style="font-family:'Barlow Condensed',sans-serif;">ONE PRICE,<br><span class="text-[#E8401C]">UNLIMITED ACCESS</span></h2>
         <p class="text-[#9090b8] text-lg mb-10">Start with a 7-day free trial, then choose a plan that fits your lifestyle. Cancel anytime.</p>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all">
-                <h3 class="text-2xl font-black text-white mb-2" style="font-family:'Barlow Condensed',sans-serif;">BASIC</h3>
-                <div class="text-4xl font-black text-white mb-1" style="font-family:'Barlow Condensed',sans-serif;">$29<span class="text-base font-normal text-[#9090b8]">/mo</span></div>
-                <ul class="space-y-2 my-5 text-[#9090b8] text-sm">
-                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Gym floor access</li>
-                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>4 group classes/mo</li>
-                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Locker access</li>
-                </ul>
-                <a href="pricing.html" class="btn-secondary w-full text-center py-3 border-white/20 text-white hover:bg-white hover:text-[#1A1A2E]">Get Started</a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left items-stretch">
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all flex flex-col justify-between h-full">
+                <div>
+                    <h3 class="text-2xl font-black text-white mb-2" style="font-family:'Barlow Condensed',sans-serif;">BASIC</h3>
+                    <div class="text-4xl font-black text-white mb-1" style="font-family:'Barlow Condensed',sans-serif;">$29<span class="text-base font-normal text-[#9090b8]">/mo</span></div>
+                    <ul class="space-y-2 my-5 text-[#9090b8] text-sm">
+                        <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Gym floor access</li>
+                        <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>4 group classes/mo</li>
+                        <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Locker access</li>
+                    </ul>
+                </div>
+                <a href="pricing.html" class="btn-secondary w-full text-center py-3 border-white/20 text-white hover:bg-white hover:text-[#1A1A2E] mt-auto">Get Started</a>
             </div>
-            <div class="bg-[#E8401C] rounded-2xl p-6 relative shadow-2xl">
+            <div class="bg-[#E8401C] rounded-2xl p-6 relative shadow-2xl flex flex-col justify-between h-full">
                 <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-white text-[#E8401C] text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">Most Popular</div>
-                <h3 class="text-2xl font-black text-white mb-2" style="font-family:'Barlow Condensed',sans-serif;">PRO</h3>
-                <div class="text-4xl font-black text-white mb-1" style="font-family:'Barlow Condensed',sans-serif;">$59<span class="text-base font-normal text-white/70">/mo</span></div>
-                <ul class="space-y-2 my-5 text-white/80 text-sm">
-                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Everything in Basic</li>
-                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Unlimited classes</li>
-                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>1 PT session/mo</li>
-                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Workout plan access</li>
-                </ul>
-                <a href="signup.html" class="bg-white text-[#E8401C] font-black text-sm py-3 rounded-xl w-full text-center uppercase tracking-wide block hover:bg-[#fff0ee] transition-all">Join Now</a>
+                <div>
+                    <h3 class="text-2xl font-black text-white mb-2" style="font-family:'Barlow Condensed',sans-serif;">PRO</h3>
+                    <div class="text-4xl font-black text-white mb-1" style="font-family:'Barlow Condensed',sans-serif;">$59<span class="text-base font-normal text-white/70">/mo</span></div>
+                    <ul class="space-y-2 my-5 text-white/80 text-sm">
+                        <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Everything in Basic</li>
+                        <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Unlimited classes</li>
+                        <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>1 PT session/mo</li>
+                        <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Workout plan access</li>
+                    </ul>
+                </div>
+                <a href="signup.html" class="bg-white text-[#E8401C] font-black text-sm py-3 rounded-xl w-full text-center uppercase tracking-wide block hover:bg-[#fff0ee] transition-all mt-auto">Join Now</a>
             </div>
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all">
-                <h3 class="text-2xl font-black text-white mb-2" style="font-family:'Barlow Condensed',sans-serif;">ELITE</h3>
-                <div class="text-4xl font-black text-white mb-1" style="font-family:'Barlow Condensed',sans-serif;">$99<span class="text-base font-normal text-[#9090b8]">/mo</span></div>
-                <ul class="space-y-2 my-5 text-[#9090b8] text-sm">
-                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Everything in Pro</li>
-                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>4 PT sessions/mo</li>
-                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Nutrition coaching</li>
-                    <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>VIP lounge access</li>
-                </ul>
-                <a href="pricing.html" class="btn-secondary w-full text-center py-3 border-white/20 text-white hover:bg-white hover:text-[#1A1A2E]">Get Elite</a>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all flex flex-col justify-between h-full sm:col-span-2 sm:max-w-md sm:mx-auto sm:w-full lg:col-span-1 lg:max-w-none">
+                <div>
+                    <h3 class="text-2xl font-black text-white mb-2" style="font-family:'Barlow Condensed',sans-serif;">ELITE</h3>
+                    <div class="text-4xl font-black text-white mb-1" style="font-family:'Barlow Condensed',sans-serif;">$99<span class="text-base font-normal text-[#9090b8]">/mo</span></div>
+                    <ul class="space-y-2 my-5 text-[#9090b8] text-sm">
+                        <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Everything in Pro</li>
+                        <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>4 PT sessions/mo</li>
+                        <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Nutrition coaching</li>
+                        <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>VIP lounge access</li>
+                    </ul>
+                </div>
+                <a href="pricing.html" class="btn-secondary w-full text-center py-3 border-white/20 text-white hover:bg-white hover:text-[#1A1A2E] mt-auto">Get Elite</a>
             </div>
         </div>
     </div>

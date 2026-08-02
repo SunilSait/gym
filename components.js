@@ -34,18 +34,19 @@ function toggleDir() {
     document.querySelectorAll('[id$="-dir-btn"]').forEach(btn => {
         btn.textContent = isRTL ? 'LTR' : 'RTL';
     });
+    const mobText = document.getElementById('mobile-dir-text');
+    if (mobText) mobText.textContent = isRTL ? 'LTR' : 'RTL';
 }
 
 function updateThemeIcons() {
     const isDark = document.documentElement.classList.contains('dark');
     const sunSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`;
     const moonSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
-    document.querySelectorAll('#dash-theme-icon,#login-theme-icon,#signup-theme-icon,#err-theme-icon,#cs-theme-icon').forEach(el => {
+    document.querySelectorAll('#dash-theme-icon,#login-theme-icon,#signup-theme-icon,#err-theme-icon,#cs-theme-icon,#nav-theme-icon,#mobile-theme-icon').forEach(el => {
         el.innerHTML = isDark ? sunSVG : moonSVG;
     });
-    // Main nav theme icon
-    const navTheme = document.getElementById('nav-theme-icon');
-    if (navTheme) navTheme.innerHTML = isDark ? sunSVG : moonSVG;
+    const mobThemeText = document.getElementById('mobile-theme-text');
+    if (mobThemeText) mobThemeText.textContent = isDark ? 'Light' : 'Dark';
 }
 
 function togglePwd(inputId, iconId) {
@@ -82,7 +83,7 @@ function buildNav() {
 
     wrap.innerHTML = `
 <header class="main-header" id="main-header" role="banner">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between w-full" aria-label="Main navigation">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[68px] flex items-center justify-between w-full" aria-label="Main navigation">
 
         <!-- Logo -->
         <a href="${base}index.html" class="flex items-center gap-2.5 logo-bounce flex-shrink-0" aria-label="IronPeak Gym Home">
@@ -102,7 +103,7 @@ function buildNav() {
         </a>
 
         <!-- Desktop Links -->
-        <ul class="hidden lg:flex items-center gap-1" role="list">
+        <ul class="hidden xl:flex items-center gap-1" role="list">
             ${NAV_LINKS.map(link => {
                 const isActive = currentPage === link.href;
                 return `<li><a href="${base}${link.href}" class="nav-link${isActive ? ' active' : ''}" aria-current="${isActive ? 'page' : 'false'}">${link.label}</a></li>`;
@@ -112,35 +113,45 @@ function buildNav() {
         <!-- Right Controls -->
         <div class="flex items-center gap-2">
             <!-- Dir toggle -->
-            <button id="nav-dir-btn" onclick="toggleDir()" class="hidden md:flex w-9 h-9 items-center justify-center rounded-xl bg-[#1A1A2E]/6 dark:bg-white/6 border border-[#1A1A2E]/10 dark:border-white/10 text-[#5a5a7a] dark:text-[#9090b8] hover:text-[#E8401C] transition-all text-[10px] font-black" title="Toggle RTL/LTR">LTR</button>
+            <button id="nav-dir-btn" onclick="toggleDir()" class="hidden xl:flex w-9 h-9 items-center justify-center rounded-xl bg-[#1A1A2E]/6 dark:bg-white/6 border border-[#1A1A2E]/10 dark:border-white/10 text-[#5a5a7a] dark:text-[#9090b8] hover:text-[#E8401C] transition-all text-[10px] font-black" title="Toggle RTL/LTR">LTR</button>
             <!-- Theme -->
-            <button onclick="toggleTheme()" class="w-9 h-9 flex items-center justify-center rounded-xl bg-[#1A1A2E]/6 dark:bg-white/6 border border-[#1A1A2E]/10 dark:border-white/10 text-[#5a5a7a] dark:text-[#9090b8] hover:text-[#E8401C] dark:hover:text-white transition-all" aria-label="Toggle dark/light mode">
+            <button onclick="toggleTheme()" class="hidden xl:flex w-9 h-9 items-center justify-center rounded-xl bg-[#1A1A2E]/6 dark:bg-white/6 border border-[#1A1A2E]/10 dark:border-white/10 text-[#5a5a7a] dark:text-[#9090b8] hover:text-[#E8401C] dark:hover:text-white transition-all" aria-label="Toggle dark/light mode">
                 <span id="nav-theme-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
             </button>
-            <!-- Login -->
-            <a href="${base}login.html" class="hidden sm:flex items-center gap-1.5 text-xs font-bold text-[#1A1A2E] dark:text-[#9090b8] hover:text-[#E8401C] dark:hover:text-white transition-colors px-3">
+            <!-- Dashboard -->
+            <a href="${base}dashboard/index.html" class="hidden xl:flex items-center gap-1.5 text-xs font-bold text-[#1A1A2E] dark:text-[#9090b8] hover:text-[#E8401C] dark:hover:text-white transition-colors px-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                Sign In
+                Dashboard
             </a>
             <!-- CTA -->
-            <a href="${base}signup.html" class="btn-primary text-xs px-5 py-2.5 hidden sm:flex items-center gap-1.5">Join Free</a>
+            <a href="${base}login.html" class="btn-primary text-xs px-5 py-2.5 hidden xl:flex items-center gap-1.5">Sign In</a>
             <!-- Mobile Hamburger -->
-            <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden w-9 h-9 flex items-center justify-center rounded-xl bg-[#1A1A2E]/6 dark:bg-white/6 border border-[#1A1A2E]/10 dark:border-white/10 text-[#1A1A2E] dark:text-white" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+            <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="xl:hidden w-9 h-9 flex items-center justify-center rounded-xl bg-[#1A1A2E]/6 dark:bg-white/6 border border-[#1A1A2E]/10 dark:border-white/10 text-[#1A1A2E] dark:text-white" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="hamburger-icon"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
             </button>
         </div>
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-[#e2e2ef] dark:border-[#252545] bg-white dark:bg-[#13132a]" role="navigation" aria-label="Mobile navigation">
+    <div id="mobile-menu" class="hidden xl:hidden border-t border-[#e2e2ef] dark:border-[#252545] bg-white dark:bg-[#13132a]" role="navigation" aria-label="Mobile navigation">
         <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
             ${NAV_LINKS.map(link => {
                 const isActive = currentPage === link.href;
                 return `<a href="${base}${link.href}" class="mobile-nav-link${isActive ? ' active' : ''}" aria-current="${isActive ? 'page' : 'false'}">${link.label}</a>`;
             }).join('')}
-            <div class="flex gap-3 pt-4 border-t border-[#e2e2ef] dark:border-[#252545] mt-2">
-                <a href="${base}login.html" class="flex-1 btn-secondary text-center py-3 text-xs">Sign In</a>
-                <a href="${base}signup.html" class="flex-1 btn-primary text-center py-3 text-xs">Join Free</a>
+            <div class="grid grid-cols-2 gap-3 pt-4 border-t border-[#e2e2ef] dark:border-[#252545] mt-2">
+                <button id="mobile-nav-dir-btn" onclick="toggleDir()" class="py-2.5 px-3 rounded-xl bg-[#1A1A2E]/6 dark:bg-white/6 border border-[#1A1A2E]/10 dark:border-white/10 text-xs font-bold text-[#1A1A2E] dark:text-white flex items-center justify-center gap-2 hover:bg-[#E8401C]/10 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12H3M21 12l-6-6m6 6l-6 6"/></svg>
+                    <span id="mobile-dir-text">LTR</span>
+                </button>
+                <button onclick="toggleTheme()" class="py-2.5 px-3 rounded-xl bg-[#1A1A2E]/6 dark:bg-white/6 border border-[#1A1A2E]/10 dark:border-white/10 text-xs font-bold text-[#1A1A2E] dark:text-white flex items-center justify-center gap-2 hover:bg-[#E8401C]/10 transition-all">
+                    <span id="mobile-theme-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+                    <span id="mobile-theme-text">Theme</span>
+                </button>
+            </div>
+            <div class="flex gap-3 pt-3">
+                <a href="${base}dashboard/index.html" class="flex-1 btn-secondary text-center py-3 text-xs">Dashboard</a>
+                <a href="${base}login.html" class="flex-1 btn-primary text-center py-3 text-xs">Sign In</a>
             </div>
         </div>
     </div>
@@ -257,7 +268,8 @@ function buildFooter() {
                     <li><a href="${base}trainers.html" class="footer-link">Personal Training</a></li>
                     <li><a href="${base}coming-soon.html" class="footer-link">Nutrition Coaching</a></li>
                     <li><a href="${base}dashboard/index.html" class="footer-link">Member Dashboard</a></li>
-                    <li><a href="${base}coming-soon.html" class="footer-link">Online Classes</a></li>
+                    <li><a href="${base}coming-soon.html" class="footer-link">Coming Soon</a></li>
+                    <li><a href="${base}404.html" class="footer-link">404 Page</a></li>
                 </ul>
             </div>
 

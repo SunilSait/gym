@@ -52,13 +52,12 @@ html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: clip;
+    overflow-x: hidden;
 }
 
 body {
     font-family: var(--font-body);
     transition: background-color 0.3s ease, color 0.3s ease;
-    overflow-x: clip;
     color: var(--text-primary);
     background-color: var(--bg-primary);
 }
@@ -261,6 +260,17 @@ body {
 .btn-secondary:hover { background-color: var(--secondary); color: #fff; }
 .dark .btn-secondary:hover { background-color: #252545; border-color: #252545; }
 .btn-secondary:active { transform: scale(0.97); }
+.btn-secondary.text-white,
+.btn-secondary-white {
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.35);
+}
+.btn-secondary.text-white:hover,
+.btn-secondary-white:hover {
+    background-color: #ffffff !important;
+    color: #1A1A2E !important;
+    border-color: #ffffff !important;
+}
 
 /* --- Section Label --- */
 .section-label {
@@ -345,10 +355,10 @@ body {
 .img-zoom:hover img { transform: scale(1.07); }
 
 /* --- Custom Scrollbar --- */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg-secondary); }
-::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--primary-hover); }
+html::-webkit-scrollbar { width: 8px; }
+html::-webkit-scrollbar-track { background: var(--bg-secondary); }
+html::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 4px; }
+html::-webkit-scrollbar-thumb:hover { background: var(--primary-hover); }
 
 /* --- Back To Top --- */
 #back-to-top {
@@ -475,13 +485,23 @@ body {
     box-shadow: var(--shadow-card-hover);
     border-color: rgba(232,64,28,0.25);
 }
-.class-card img {
+.class-card .img-zoom img,
+.class-card > img {
     width: 100%;
     height: 200px;
     object-fit: cover;
     transition: transform 0.6s ease;
 }
-.class-card:hover img { transform: scale(1.06); }
+.class-card:hover .img-zoom img,
+.class-card:hover > img { transform: scale(1.06); }
+
+.class-card img.rounded-full,
+.trainer-avatar {
+    width: 1.75rem !important;
+    height: 1.75rem !important;
+    border-radius: 9999px !important;
+    object-fit: cover !important;
+}
 
 /* --- Trainer Card --- */
 .trainer-card {
@@ -634,9 +654,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 1000;
-    height: 68px;
-    display: flex;
-    align-items: center;
     background: rgba(255,255,255,0.92);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);

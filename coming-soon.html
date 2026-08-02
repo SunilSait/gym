@@ -6,6 +6,9 @@
     <meta name="description" content="IronPeak Gym — Something exciting is coming. Stay tuned for our next big feature launch.">
     <title>Coming Soon | IronPeak Gym & Fitness</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#E8401C', secondary: '#1A1A2E' } } } }</script>
@@ -13,37 +16,59 @@
         .countdown-box {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            border-radius: 1rem;
-            padding: 1.25rem 1rem;
+            border-radius: 0.85rem;
+            padding: 0.75rem 0.5rem;
             text-align: center;
-            min-width: 80px;
+            min-width: 58px;
+            flex: 1;
+            max-width: 90px;
             animation: countdown-tick 1s ease infinite;
         }
+        @media (min-width: 640px) {
+            .countdown-box {
+                padding: 1.25rem 1rem;
+                min-width: 80px;
+                border-radius: 1rem;
+            }
+        }
         .countdown-num {
-            font-size: 2.75rem;
+            font-size: 1.75rem;
             font-weight: 900;
             color: #E8401C;
             font-family: 'Barlow Condensed', sans-serif;
             line-height: 1;
         }
+        @media (min-width: 640px) {
+            .countdown-num {
+                font-size: 2.75rem;
+            }
+        }
         .countdown-label {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.08em;
             color: var(--text-secondary);
-            margin-top: 0.35rem;
+            margin-top: 0.25rem;
+        }
+        @media (min-width: 640px) {
+            .countdown-label {
+                font-size: 0.65rem;
+                letter-spacing: 0.1em;
+                margin-top: 0.35rem;
+            }
         }
     </style>
 </head>
-<body class="min-h-screen bg-gradient-mesh flex items-center justify-center overflow-x-hidden relative text-[#0f0f1a] dark:text-[#f0f0ff]">
+<body class="min-h-screen bg-gradient-mesh flex items-center justify-center relative text-[#0f0f1a] dark:text-[#f0f0ff]">
 
     <!-- Background -->
     <div class="fixed inset-0 z-0">
-        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=1600&q=60&fit=crop" alt="" class="w-full h-full object-cover opacity-5 dark:opacity-10">
+        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=1600&q=60&fit=crop" alt="" class="w-full h-full object-cover opacity-10 dark:opacity-20">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#f4f4fa]/90 via-white/80 to-[#eef0f8] dark:from-[#0d0d1a]/90 dark:via-[#0d0d1a]/70 dark:to-[#0d0d1a]"></div>
     </div>
-    <div class="bg-orb w-96 h-96 bg-[#E8401C]" style="top:-10%;left:-5%;z-index:1;opacity:0.1;"></div>
-    <div class="bg-orb w-64 h-64 bg-[#1A1A2E]" style="bottom:-10%;right:-5%;z-index:1;opacity:0.06;animation-delay:4s;"></div>
+    <div class="bg-orb w-96 h-96 bg-[#E8401C]" style="top:-10%;left:-5%;z-index:1;opacity:0.12;"></div>
+    <div class="bg-orb w-64 h-64 bg-[#1A1A2E]" style="bottom:-10%;right:-5%;z-index:1;opacity:0.08;animation-delay:4s;"></div>
 
     <!-- Top Bar -->
     <div class="flex items-center justify-end p-4 sm:p-6 w-full absolute top-0 left-0 z-50">
@@ -55,54 +80,58 @@
         </div>
     </div>
 
-    <div class="relative z-10 text-center px-4 max-w-2xl mx-auto py-20">
+    <div class="relative z-10 text-center px-4 max-w-2xl mx-auto pt-28 sm:pt-36 pb-16">
         <!-- Logo -->
-        <a href="index.html" class="inline-flex items-center gap-2.5 mb-10 logo-bounce" aria-label="IronPeak Home">
-            <div class="w-10 h-10 bg-[#E8401C] rounded-xl flex items-center justify-center shadow-md shrink-0">
-                <svg width="22" height="22" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="10" y="42" width="80" height="16" rx="4" fill="white" opacity="0.95"/>
-                    <rect x="6" y="28" width="16" height="44" rx="5" fill="white" opacity="0.9"/>
-                    <rect x="78" y="28" width="16" height="44" rx="5" fill="white" opacity="0.9"/>
-                    <rect x="0" y="35" width="10" height="30" rx="4" fill="white" opacity="0.7"/>
-                    <rect x="90" y="35" width="10" height="30" rx="4" fill="white" opacity="0.7"/>
-                </svg>
-            </div>
-            <div class="flex flex-col leading-none text-left">
-                <span class="font-black text-[#1A1A2E] dark:text-white text-base tracking-tight" style="font-family:'Barlow Condensed',sans-serif;">IRON<span class="text-[#E8401C]">PEAK</span></span>
-                <span class="font-semibold text-[#5a5a7a] dark:text-[#9090b8] text-[10px] tracking-widest uppercase">Gym & Fitness</span>
-            </div>
-        </a>
-
-        <!-- Tag -->
-        <div class="inline-flex items-center gap-2 mb-6">
-            <div class="w-2 h-2 rounded-full bg-[#E8401C] animate-pulse"></div>
-            <span class="text-[#E8401C] text-xs font-black uppercase tracking-[0.2em]">Under Construction</span>
+        <div class="flex justify-center mb-6">
+            <a href="index.html" class="inline-flex items-center gap-2.5 logo-bounce" aria-label="IronPeak Home">
+                <div class="w-10 h-10 bg-[#E8401C] rounded-xl flex items-center justify-center shadow-md shrink-0">
+                    <svg width="22" height="22" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="42" width="80" height="16" rx="4" fill="white" opacity="0.95"/>
+                        <rect x="6" y="28" width="16" height="44" rx="5" fill="white" opacity="0.9"/>
+                        <rect x="78" y="28" width="16" height="44" rx="5" fill="white" opacity="0.9"/>
+                        <rect x="0" y="35" width="10" height="30" rx="4" fill="white" opacity="0.7"/>
+                        <rect x="90" y="35" width="10" height="30" rx="4" fill="white" opacity="0.7"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col leading-none text-left">
+                    <span class="font-black text-[#1A1A2E] dark:text-white text-base tracking-tight" style="font-family:'Barlow Condensed',sans-serif;">IRON<span class="text-[#E8401C]">PEAK</span></span>
+                    <span class="font-semibold text-[#5a5a7a] dark:text-[#9090b8] text-[10px] tracking-widest uppercase">Gym & Fitness</span>
+                </div>
+            </a>
         </div>
 
-        <h1 class="text-6xl md:text-8xl font-black text-[#1A1A2E] dark:text-white tracking-tighter mb-5" style="font-family:'Barlow Condensed',sans-serif;">
+        <!-- Tag -->
+        <div class="flex justify-center mb-8">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E8401C]/15 border border-[#E8401C]/30 shadow-md">
+                <div class="w-2 h-2 rounded-full bg-[#E8401C] animate-pulse"></div>
+                <span class="text-[#E8401C] text-xs font-black uppercase tracking-[0.2em]">Under Construction</span>
+            </div>
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl md:text-8xl font-black text-[#1A1A2E] dark:text-white tracking-tight leading-none mb-6 uppercase drop-shadow-sm" style="font-family:'Barlow Condensed',sans-serif;">
             SOMETHING<br><span class="text-[#E8401C]">BIG</span> IS COMING
         </h1>
-        <p class="text-[#5a5a7a] dark:text-[#9090b8] text-lg leading-relaxed mb-12 max-w-lg mx-auto">
+        <p class="text-[#4a4a6a] dark:text-[#9090b8] text-base sm:text-lg leading-relaxed mb-10 max-w-lg mx-auto font-medium">
             We're building something exciting — a brand new feature that will take your fitness journey to the next level. Be the first to know when it launches.
         </p>
 
         <!-- Countdown -->
-        <div class="flex items-center justify-center gap-4 mb-12" id="countdown">
+        <div class="flex items-center justify-center gap-1.5 sm:gap-4 mb-10 w-full max-w-md mx-auto" id="countdown">
             <div class="countdown-box">
                 <div class="countdown-num" id="cd-days">00</div>
                 <div class="countdown-label">Days</div>
             </div>
-            <div class="text-[#E8401C] text-3xl font-black" style="font-family:'Barlow Condensed',sans-serif;">:</div>
+            <div class="text-[#E8401C] text-xl sm:text-3xl font-black shrink-0" style="font-family:'Barlow Condensed',sans-serif;">:</div>
             <div class="countdown-box">
                 <div class="countdown-num" id="cd-hours">00</div>
                 <div class="countdown-label">Hours</div>
             </div>
-            <div class="text-[#E8401C] text-3xl font-black" style="font-family:'Barlow Condensed',sans-serif;">:</div>
+            <div class="text-[#E8401C] text-xl sm:text-3xl font-black shrink-0" style="font-family:'Barlow Condensed',sans-serif;">:</div>
             <div class="countdown-box">
                 <div class="countdown-num" id="cd-mins">00</div>
                 <div class="countdown-label">Minutes</div>
             </div>
-            <div class="text-[#E8401C] text-3xl font-black" style="font-family:'Barlow Condensed',sans-serif;">:</div>
+            <div class="text-[#E8401C] text-xl sm:text-3xl font-black shrink-0" style="font-family:'Barlow Condensed',sans-serif;">:</div>
             <div class="countdown-box">
                 <div class="countdown-num" id="cd-secs">00</div>
                 <div class="countdown-label">Seconds</div>
