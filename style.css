@@ -277,20 +277,24 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.35rem 1rem;
+    padding: 0.4rem 1.1rem;
     border-radius: 9999px;
-    background: rgba(232,64,28,0.1);
-    border: 1px solid rgba(232,64,28,0.25);
-    color: var(--primary);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
+    background: rgba(232, 64, 28, 0.2) !important;
+    border: 1px solid rgba(232, 64, 28, 0.45) !important;
+    color: #ff6b4a !important;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     font-family: var(--font-body);
+    box-shadow: 0 0 16px rgba(232, 64, 28, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 .dark .section-label {
-    background: rgba(232,64,28,0.15);
-    border-color: rgba(232,64,28,0.35);
+    background: rgba(232, 64, 28, 0.25) !important;
+    border-color: rgba(232, 64, 28, 0.5) !important;
+    color: #ff7a5a !important;
 }
 
 /* --- Card Hover --- */
