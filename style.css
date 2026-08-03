@@ -1027,3 +1027,17 @@ section:first-of-type:not([data-no-offset]) {
 /* ========= AUTH PAGE BG ========= */
 .bg-gradient-mesh { background:linear-gradient(135deg,#f7f7fc 0%,#ebebf5 50%,#e2e2ef 100%); }
 .dark .bg-gradient-mesh { background:linear-gradient(135deg,#0d0d1a 0%,#13132a 50%,#1a1a35 100%); }
+
+/* ========= GRID CARD CENTERING ========= */
+@media (min-width: 640px) and (max-width: 1023px) {
+    /* Auto-center odd 3rd card on 2-column tablet grid views */
+    .stagger-container.grid-cols-1.sm\:grid-cols-2 > *:nth-child(3):last-child,
+    .grid.sm\:grid-cols-2 > *:nth-child(3):last-child {
+        grid-column: span 2 / span 2;
+        max-width: 420px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+

@@ -18,111 +18,173 @@
 <!-- NAV -->
 <div id="main-nav"></div>
 
-<!-- ═══ HERO — FULL-BLEED SPLIT ═══ -->
-<section class="relative min-h-screen flex items-center overflow-hidden bg-[#0d0d1a]">
-    <!-- Background image -->
+<!-- ═══ HERO — BOLD CINEMATIC REDESIGN ═══ -->
+<section class="relative min-h-screen flex items-center overflow-hidden" style="background:#0a0a12;">
+
+    <!-- Full-bleed background image with multi-layer overlay -->
     <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80&fit=crop" alt="Gym interior" class="w-full h-full object-cover object-center opacity-30">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#0d0d1a] via-[#0d0d1a]/80 to-transparent"></div>
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=90&fit=crop" alt="Gym interior" class="w-full h-full object-cover object-center" style="opacity:0.18;">
+        <div class="absolute inset-0" style="background:linear-gradient(120deg,#0a0a12 48%,rgba(10,10,18,0.55) 100%);"></div>
     </div>
 
-    <!-- Orb decorations -->
-    <div class="bg-orb w-96 h-96 bg-[#E8401C]" style="top:-10%;left:-5%;animation-delay:0s;"></div>
-    <div class="bg-orb w-64 h-64 bg-[#1A1A2E]" style="bottom:10%;right:20%;animation-delay:3s;opacity:0.08;"></div>
+    <!-- Diagonal red accent slash -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div style="position:absolute;top:0;right:0;width:55%;height:100%;background:linear-gradient(135deg,transparent 48%,rgba(232,64,28,0.07) 48%,rgba(232,64,28,0.07) 100%);"></div>
+        <div style="position:absolute;bottom:-2px;left:0;right:0;height:3px;background:linear-gradient(90deg,#E8401C,transparent 60%);"></div>
+    </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[145px] pb-24 lg:pt-[165px] lg:pb-32 w-full">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <!-- Left Text Content -->
-            <div class="lg:col-span-6">
-                <!-- Badge -->
-                <div class="flex items-center gap-3 mb-8 animate-fade-in-up" style="animation-delay:0.1s;">
-                    <div class="w-2 h-2 rounded-full bg-[#E8401C] animate-pulse"></div>
-                    <span class="text-[#E8401C] text-xs font-bold uppercase tracking-[0.2em]">Now Open · 24/7 Access</span>
+    <!-- Animated glow orbs -->
+    <div style="position:absolute;top:-120px;left:-80px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(232,64,28,0.22) 0%,transparent 70%);animation:pulse 6s ease-in-out infinite;pointer-events:none;"></div>
+    <div style="position:absolute;bottom:-60px;right:10%;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(232,64,28,0.1) 0%,transparent 70%);animation:pulse 8s ease-in-out infinite 2s;pointer-events:none;"></div>
+
+    <!-- Horizontal scan lines decoration -->
+    <div class="absolute inset-0 pointer-events-none" style="background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,255,255,0.012) 3px,rgba(255,255,255,0.012) 4px);"></div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[150px] pb-20 lg:pt-[160px] lg:pb-28">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+
+            <!-- ═══ LEFT: Text Block ═══ -->
+            <div class="flex flex-col">
+
+                <!-- Eyebrow label -->
+                <div class="flex items-center gap-3 mb-7 animate-fade-in-up" style="animation-delay:0.05s;">
+                    <div style="width:32px;height:2px;background:#E8401C;"></div>
+                    <span style="color:#E8401C;font-size:11px;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;font-family:'Inter',sans-serif;">Elite Fitness · Est. 2015</span>
+                    <div style="width:32px;height:2px;background:#E8401C;"></div>
                 </div>
 
-                <!-- Title -->
-                <h1 class="hero-title text-7xl md:text-8xl lg:text-9xl font-black text-white leading-none tracking-tight mb-6 animate-fade-in-up uppercase drop-shadow-lg" style="font-family:'Barlow Condensed',sans-serif;animation-delay:0.2s;">
-                    TRAIN<br>
-                    <span class="text-[#E8401C]">HARD.</span><br>
-                    LIVE STRONG.
-                </h1>
+                <!-- Main heading — massive, stacked, bold -->
+                <div class="animate-fade-in-up" style="animation-delay:0.15s;">
+                    <h1 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;line-height:0.88;text-transform:uppercase;margin:0 0 8px;">
+                        <span style="display:block;font-size:clamp(72px,11vw,140px);color:#ffffff;letter-spacing:-0.01em;">FORGE</span>
+                        <span style="display:block;font-size:clamp(72px,11vw,140px);color:#E8401C;letter-spacing:-0.01em;-webkit-text-stroke:2px #E8401C;text-shadow:0 0 60px rgba(232,64,28,0.4);">YOUR</span>
+                        <span style="display:block;font-size:clamp(72px,11vw,140px);color:transparent;-webkit-text-stroke:2px rgba(255,255,255,0.5);letter-spacing:-0.01em;">LEGACY</span>
+                    </h1>
+                </div>
 
-                <!-- Desc -->
-                <p class="text-[#9090b8] text-lg md:text-xl leading-relaxed mb-10 max-w-xl animate-fade-in-up" style="animation-delay:0.35s;">
-                    Your neighborhood fitness hub with elite trainers, diverse group classes, and cutting-edge equipment. Your transformation starts here.
+                <!-- Tagline divider -->
+                <div class="flex items-center gap-4 my-6 animate-fade-in-up" style="animation-delay:0.3s;">
+                    <div style="flex:1;height:1px;background:linear-gradient(90deg,#E8401C,transparent);"></div>
+                    <span style="color:#9090b8;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;white-space:nowrap;">IronPeak Gym &amp; Fitness Center</span>
+                </div>
+
+                <!-- Description -->
+                <p class="animate-fade-in-up" style="color:#9090b8;font-size:17px;line-height:1.7;max-width:480px;margin-bottom:36px;animation-delay:0.4s;">
+                    Elite training environments, world-class coaching, and a premium membership experience that transforms bodies and minds.
                 </p>
 
-                <!-- CTAs -->
-                <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style="animation-delay:0.5s;">
-                    <a href="signup.html" class="btn-primary text-sm px-8 py-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                        Start Free Trial
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap gap-4 animate-fade-in-up" style="animation-delay:0.52s;">
+                    <a href="signup.html" style="display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:#E8401C;color:#fff;font-weight:800;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;border-radius:6px;text-decoration:none;transition:all 0.25s;box-shadow:0 8px 32px rgba(232,64,28,0.4);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 40px rgba(232,64,28,0.6)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 8px 32px rgba(232,64,28,0.4)';">
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        Claim Your Spot
                     </a>
-                    <a href="classes.html" class="btn-secondary text-sm px-8 py-4 border-white/30 text-white hover:bg-white hover:text-[#1A1A2E]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-                        View Classes
+                    <a href="classes.html" style="display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:transparent;color:#fff;font-weight:700;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;border-radius:6px;border:1.5px solid rgba(255,255,255,0.2);text-decoration:none;transition:all 0.25s;backdrop-filter:blur(8px);" onmouseover="this.style.borderColor='#E8401C';this.style.color='#E8401C';" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)';this.style.color='#fff';">
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                        Our Story →
                     </a>
                 </div>
 
-                <!-- Social proof -->
-                <div class="flex items-center gap-6 mt-12 animate-fade-in-up" style="animation-delay:0.65s;">
-                    <div class="flex -space-x-2">
-                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=60&h=60&fit=crop&crop=face" class="w-9 h-9 rounded-full border-2 border-[#0d0d1a] object-cover" alt="Member">
-                        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=60&h=60&fit=crop&crop=face" class="w-9 h-9 rounded-full border-2 border-[#0d0d1a] object-cover" alt="Member">
-                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=60&h=60&fit=crop&crop=face" class="w-9 h-9 rounded-full border-2 border-[#0d0d1a] object-cover" alt="Member">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=60&h=60&fit=crop&crop=face" class="w-9 h-9 rounded-full border-2 border-[#0d0d1a] object-cover" alt="Member">
+                <!-- Social proof row -->
+                <div class="flex items-center gap-5 mt-10 animate-fade-in-up" style="animation-delay:0.65s;">
+                    <div style="display:flex;">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=60&h=60&fit=crop&crop=face" style="width:36px;height:36px;border-radius:50%;border:2px solid #0a0a12;object-fit:cover;margin-right:-10px;" alt="Member">
+                        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=60&h=60&fit=crop&crop=face" style="width:36px;height:36px;border-radius:50%;border:2px solid #0a0a12;object-fit:cover;margin-right:-10px;" alt="Member">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=60&h=60&fit=crop&crop=face" style="width:36px;height:36px;border-radius:50%;border:2px solid #0a0a12;object-fit:cover;margin-right:-10px;" alt="Member">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=60&h=60&fit=crop&crop=face" style="width:36px;height:36px;border-radius:50%;border:2px solid #0a0a12;object-fit:cover;" alt="Member">
+                    </div>
+                    <div style="border-left:1px solid rgba(255,255,255,0.12);padding-left:16px;">
+                        <div style="display:flex;gap:2px;margin-bottom:3px;">
+                            <svg width="12" height="12" fill="#E8401C" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg width="12" height="12" fill="#E8401C" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg width="12" height="12" fill="#E8401C" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg width="12" height="12" fill="#E8401C" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg width="12" height="12" fill="#E8401C" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p style="color:rgba(255,255,255,0.55);font-size:11px;"><span style="color:#fff;font-weight:700;">2,400+</span> happy members · <span style="color:#fff;font-weight:700;">4.9/5</span> rated</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══ RIGHT: Image Mosaic + Floating Stat Badges ═══ -->
+            <div class="hidden lg:block relative animate-fade-in-up" style="animation-delay:0.35s;">
+
+                <!-- Mosaic container -->
+                <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;height:560px;position:relative;">
+
+                    <!-- Card 1 — tall left spanning both rows -->
+                    <div style="grid-row:1/3;border-radius:20px;overflow:hidden;position:relative;border:1.5px solid rgba(255,255,255,0.1);box-shadow:0 24px 60px rgba(0,0,0,0.6);transition:transform 0.4s,border-color 0.3s;" onmouseover="this.style.transform='scale(1.02)';this.style.borderColor='rgba(232,64,28,0.5)';" onmouseout="this.style.transform='scale(1)';this.style.borderColor='rgba(255,255,255,0.1)';">
+                        <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=900&q=85&fit=crop" alt="Power Training" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s;" onmouseover="this.style.transform='scale(1.08)';" onmouseout="this.style.transform='scale(1)';">
+                        <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,10,18,0.92) 100%);"></div>
+                        <!-- Red accent top bar -->
+                        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#E8401C,transparent);"></div>
+                        <div style="position:absolute;bottom:18px;left:18px;right:18px;">
+                            <span style="display:inline-block;background:#E8401C;color:#fff;font-size:9px;font-weight:900;letter-spacing:0.16em;text-transform:uppercase;padding:4px 10px;border-radius:4px;margin-bottom:8px;">⚡ Featured Zone</span>
+                            <p style="color:#fff;font-weight:800;font-size:17px;font-family:'Barlow Condensed',sans-serif;letter-spacing:0.03em;text-transform:uppercase;">High-Performance Zone</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 — top right -->
+                    <div style="border-radius:20px;overflow:hidden;position:relative;border:1.5px solid rgba(255,255,255,0.1);box-shadow:0 16px 40px rgba(0,0,0,0.5);transition:transform 0.4s,border-color 0.3s;" onmouseover="this.style.transform='scale(1.03)';this.style.borderColor='rgba(232,64,28,0.5)';" onmouseout="this.style.transform='scale(1)';this.style.borderColor='rgba(255,255,255,0.1)';">
+                        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&q=85&fit=crop" alt="Dumbbell Workout" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s;" onmouseover="this.style.transform='scale(1.08)';" onmouseout="this.style.transform='scale(1)';">
+                        <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,10,18,0.85) 100%);"></div>
+                        <div style="position:absolute;bottom:14px;left:14px;">
+                            <p style="color:#fff;font-weight:700;font-size:13px;">Personalized Coaching</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 — bottom right -->
+                    <div style="border-radius:20px;overflow:hidden;position:relative;border:1.5px solid rgba(255,255,255,0.1);box-shadow:0 16px 40px rgba(0,0,0,0.5);transition:transform 0.4s,border-color 0.3s;" onmouseover="this.style.transform='scale(1.03)';this.style.borderColor='rgba(232,64,28,0.5)';" onmouseout="this.style.transform='scale(1)';this.style.borderColor='rgba(255,255,255,0.1)';">
+                        <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&q=85&fit=crop" alt="HIIT Training" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s;" onmouseover="this.style.transform='scale(1.08)';" onmouseout="this.style.transform='scale(1)';">
+                        <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,10,18,0.85) 100%);"></div>
+                        <div style="position:absolute;bottom:14px;left:14px;">
+                            <p style="color:#fff;font-weight:700;font-size:13px;">HIIT &amp; Endurance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Stat Badge 1 — Members -->
+                <div style="position:absolute;top:24px;right:-22px;background:rgba(26,26,45,0.92);backdrop-filter:blur(16px);border:1px solid rgba(232,64,28,0.35);border-radius:14px;padding:14px 20px;display:flex;align-items:center;gap:12px;box-shadow:0 12px 40px rgba(0,0,0,0.5);animation:float 4s ease-in-out infinite;">
+                    <div style="width:38px;height:38px;background:#E8401C;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
                     <div>
-                        <div class="flex gap-0.5 mb-1">
-                            <svg class="star-fill w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            <svg class="star-fill w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            <svg class="star-fill w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            <svg class="star-fill w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            <svg class="star-fill w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                        </div>
-                        <p class="text-white/70 text-xs"><span class="font-bold text-white">2,400+</span> happy members</p>
+                        <p style="color:#fff;font-weight:900;font-size:20px;line-height:1;font-family:'Barlow Condensed',sans-serif;">2,400+</p>
+                        <p style="color:#9090b8;font-size:11px;font-weight:500;margin-top:2px;">Active Members</p>
                     </div>
+                </div>
+
+                <!-- Floating Stat Badge 2 — Rating -->
+                <div style="position:absolute;bottom:28px;right:-22px;background:#E8401C;border-radius:14px;padding:14px 20px;display:flex;align-items:center;gap:12px;box-shadow:0 12px 40px rgba(232,64,28,0.45);animation:float 4s ease-in-out infinite 2s;">
+                    <div style="width:38px;height:38px;background:rgba(0,0,0,0.25);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                        <svg width="18" height="18" fill="#fff" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <div>
+                        <p style="color:#fff;font-weight:900;font-size:20px;line-height:1;font-family:'Barlow Condensed',sans-serif;">4.9 / 5</p>
+                        <p style="color:rgba(255,255,255,0.75);font-size:11px;font-weight:500;margin-top:2px;">Member Rating</p>
+                    </div>
+                </div>
+
+                <!-- Live indicator dot -->
+                <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:rgba(10,10,18,0.8);border:1px solid rgba(232,64,28,0.3);border-radius:20px;padding:5px 12px;display:flex;align-items:center;gap:6px;backdrop-filter:blur(8px);">
+                    <div style="width:7px;height:7px;border-radius:50%;background:#E8401C;animation:pulse 1.5s ease-in-out infinite;"></div>
+                    <span style="color:#fff;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">24/7 Open</span>
                 </div>
             </div>
 
-            <!-- Right Image Collage (Equal Spacing Grid) -->
-            <div class="relative lg:col-span-6 hidden lg:block animate-fade-in-up" style="animation-delay: 0.4s;">
-                <div class="grid grid-cols-2 gap-5 h-[500px]">
-                    <!-- Left Tall Featured Card -->
-                    <div class="relative h-full rounded-3xl overflow-hidden border-2 border-white/15 shadow-2xl group transition-all duration-500 hover:scale-[1.02] hover:border-[#E8401C]/60">
-                        <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=900&q=80&fit=crop" alt="Strength & Power Training" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#0d0d1a]/90 via-[#0d0d1a]/20 to-transparent"></div>
-                        <div class="absolute bottom-5 left-5 right-5">
-                            <span class="bg-[#E8401C] text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-md mb-2 inline-block">Featured Zone</span>
-                            <p class="text-white font-bold text-lg">High-Performance Zone</p>
-                        </div>
-                    </div>
-
-                    <!-- Right Column: 2 Stacked Cards with Equal Gap -->
-                    <div class="flex flex-col gap-5 h-full">
-                        <!-- Top Right Card -->
-                        <div class="relative flex-1 rounded-3xl overflow-hidden border-2 border-white/15 shadow-xl group transition-all duration-500 hover:scale-[1.02] hover:border-[#E8401C]/60">
-                            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&q=80&fit=crop" alt="Dumbbell Workout" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0d0d1a]/80 via-transparent to-transparent"></div>
-                            <div class="absolute bottom-4 left-4">
-                                <p class="text-white font-semibold text-sm">Personalized Coaching</p>
-                            </div>
-                        </div>
-
-                        <!-- Bottom Right Card -->
-                        <div class="relative flex-1 rounded-3xl overflow-hidden border-2 border-white/15 shadow-2xl group transition-all duration-500 hover:scale-[1.02] hover:border-[#E8401C]/60">
-                            <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&q=80&fit=crop" alt="HIIT Battle Ropes" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0d0d1a]/80 via-transparent to-transparent"></div>
-                            <div class="absolute bottom-4 left-4">
-                                <p class="text-white font-semibold text-sm">HIIT & Endurance</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
+
+    <!-- Bottom fade -->
+    <div style="position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(transparent,#0a0a12);pointer-events:none;"></div>
 </section>
+
+<style>
+@keyframes float {
+    0%,100% { transform:translateY(0px); }
+    50% { transform:translateY(-10px); }
+}
+</style>
 
 <!-- ═══ MARQUEE STRIP ═══ -->
 <div class="bg-[#E8401C] py-4 overflow-hidden">
@@ -181,14 +243,14 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#E8401C" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                 </div>
                 <div class="text-4xl font-black text-[#1A1A2E] dark:text-white mb-1" style="font-family:'Barlow Condensed',sans-serif;" data-count="18" data-suffix="">0</div>
-                <p class="text-[#5a5a7a] dark:text-[#9090b8] text-sm font-medium">Expert Trainers</p>
+                <p class="text-[#5a5a7a] dark:text-[#9090b8] text-sm font-medium"> Trainers</p>
             </div>
             <div class="stat-card text-center stagger-item">
                 <div class="w-12 h-12 bg-[#E8401C]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#E8401C" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 </div>
                 <div class="text-4xl font-black text-[#1A1A2E] dark:text-white mb-1" style="font-family:'Barlow Condensed',sans-serif;" data-count="12" data-suffix="">0</div>
-                <p class="text-[#5a5a7a] dark:text-[#9090b8] text-sm font-medium">Years of Excellence</p>
+                <p class="text-[#5a5a7a] dark:text-[#9090b8] text-sm font-medium">Years </p>
             </div>
         </div>
     </div>
@@ -203,10 +265,10 @@
             <p class="text-[#5a5a7a] dark:text-[#9090b8] text-lg mt-4 max-w-xl mx-auto">World-class equipment and spaces designed to push your limits.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Facility Card 1 -->
             <div class="relative rounded-3xl overflow-hidden h-[380px] group cursor-pointer reveal shadow-xl">
-                <img src="https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=600&q=80&fit=crop" alt="Weight Room" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <img src="assets/images/weight-room.png" alt="Weight Room" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0d0d1a] via-[#0d0d1a]/30 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-6">
                     <div class="badge badge-primary mb-2">Free Weights</div>
@@ -217,7 +279,7 @@
 
             <!-- Facility Card 2 -->
             <div class="relative rounded-3xl overflow-hidden h-[380px] group cursor-pointer reveal shadow-xl">
-                <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80&fit=crop" alt="Cardio Zone" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <img src="assets/images/cardio-zone.png" alt="Cardio Zone" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0d0d1a] via-[#0d0d1a]/20 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-6">
                     <div class="badge badge-primary mb-2">Cardio</div>
@@ -227,13 +289,13 @@
             </div>
 
             <!-- Facility Card 3 -->
-            <div class="relative rounded-3xl overflow-hidden h-[380px] group cursor-pointer reveal shadow-xl">
-                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80&fit=crop" alt="Group Studio" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="relative rounded-3xl overflow-hidden h-[380px] group cursor-pointer reveal shadow-xl sm:col-span-2 sm:max-w-md sm:mx-auto sm:w-full lg:col-span-1 lg:max-w-none">
+                <img src="assets/images/group-studio.png" alt="Group Studio" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0d0d1a] via-[#0d0d1a]/30 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-6">
                     <div class="badge badge-primary mb-2">Group Classes</div>
                     <h3 class="text-2xl font-black text-white" style="font-family:'Barlow Condensed',sans-serif;">Group Studio</h3>
-                    <p class="text-white/70 text-sm mt-1">Yoga, HIIT, Spin & Boxing</p>
+                    <p class="text-white/70 text-sm mt-1">Yoga, HIIT, Spin & Boxing Studio</p>
                 </div>
             </div>
         </div>
@@ -255,7 +317,7 @@
             <!-- Class 1 -->
             <div class="class-card stagger-item">
                 <div class="img-zoom relative">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80&fit=crop" alt="HIIT Training">
+                    <img src="assets/images/class-hiit.png" alt="HIIT Training">
                     <div class="absolute top-3 left-3"><span class="badge badge-primary">High Intensity</span></div>
                 </div>
                 <div class="p-5">
@@ -266,7 +328,7 @@
                     <p class="text-[#5a5a7a] dark:text-[#9090b8] text-sm mb-4 leading-relaxed">High-intensity interval training to torch calories and build functional strength.</p>
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=40&h=40&fit=crop&crop=face" class="w-7 h-7 rounded-full object-cover" alt="Trainer">
+                            <img src="assets/trainer_ryan.png" class="w-7 h-7 rounded-full object-cover" alt="Coach Ryan">
                             <span class="text-xs text-[#5a5a7a] dark:text-[#9090b8] font-medium">Coach Ryan</span>
                         </div>
                         <a href="login.html" class="text-[#E8401C] text-xs font-bold hover:underline">Book Now →</a>
@@ -277,7 +339,7 @@
             <!-- Class 2 -->
             <div class="class-card stagger-item">
                 <div class="img-zoom relative">
-                    <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=500&q=80&fit=crop" alt="Yoga">
+                    <img src="assets/images/class-yoga.png" alt="Yoga">
                     <div class="absolute top-3 left-3"><span class="badge badge-success">All Levels</span></div>
                 </div>
                 <div class="p-5">
@@ -288,7 +350,7 @@
                     <p class="text-[#5a5a7a] dark:text-[#9090b8] text-sm mb-4 leading-relaxed">Strengthen flexibility and mindfulness through dynamic yoga flows.</p>
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop&crop=face" class="w-7 h-7 rounded-full object-cover" alt="Trainer">
+                            <img src="assets/trainer_priya.png" class="w-7 h-7 rounded-full object-cover" alt="Priya S.">
                             <span class="text-xs text-[#5a5a7a] dark:text-[#9090b8] font-medium">Priya S.</span>
                         </div>
                         <a href="login.html" class="text-[#E8401C] text-xs font-bold hover:underline">Book Now →</a>
@@ -297,9 +359,9 @@
             </div>
 
             <!-- Class 3 -->
-            <div class="class-card stagger-item">
+            <div class="class-card stagger-item sm:col-span-2 sm:max-w-md sm:mx-auto sm:w-full lg:col-span-1 lg:max-w-none">
                 <div class="img-zoom relative">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80&fit=crop" alt="Boxing">
+                    <img src="assets/images/class-boxing.png" alt="Boxing">
                     <div class="absolute top-3 left-3"><span class="badge badge-warning">Intermediate</span></div>
                 </div>
                 <div class="p-5">
@@ -310,7 +372,7 @@
                     <p class="text-[#5a5a7a] dark:text-[#9090b8] text-sm mb-4 leading-relaxed">Learn boxing techniques while getting an incredible full-body workout.</p>
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" class="w-7 h-7 rounded-full object-cover" alt="Trainer">
+                            <img src="assets/trainer_mike.png" class="w-7 h-7 rounded-full object-cover" alt="Coach Mike">
                             <span class="text-xs text-[#5a5a7a] dark:text-[#9090b8] font-medium">Coach Mike</span>
                         </div>
                         <a href="login.html" class="text-[#E8401C] text-xs font-bold hover:underline">Book Now →</a>
@@ -342,7 +404,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#E8401C" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 </div>
                 <h3 class="text-xl font-black text-white mb-2" style="font-family:'Barlow Condensed',sans-serif;">24/7 Access</h3>
-                <p class="text-[#9090b8] text-sm leading-relaxed">Your fitness schedule shouldn't be limited. Train whenever you want with our round-the-clock access.</p>
+                <p class="text-[#9090b8] text-sm leading-relaxed">Your fitness schedule shouldn't be limited. Train whenever you want with our clock access.</p>
             </div>
             <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-[#E8401C]/40 transition-all stagger-item">
                 <div class="w-12 h-12 bg-[#E8401C]/15 rounded-2xl flex items-center justify-center mb-5">
@@ -356,7 +418,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#E8401C" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 </div>
                 <h3 class="text-xl font-black text-white mb-2" style="font-family:'Barlow Condensed',sans-serif;">Supportive Community</h3>
-                <p class="text-[#9090b8] text-sm leading-relaxed">Join a community of motivated individuals who support each other's fitness journey.</p>
+                <p class="text-[#9090b8] text-sm leading-relaxed">Join a community of motivated individuals who support each other's life fitness journey.</p>
             </div>
             <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-[#E8401C]/40 transition-all stagger-item">
                 <div class="w-12 h-12 bg-[#E8401C]/15 rounded-2xl flex items-center justify-center mb-5">
@@ -387,7 +449,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-container">
             <div class="trainer-card stagger-item">
                 <div class="img-zoom">
-                    <img src="https://images.unsplash.com/photo-1611672585731-fa10603fb9e0?w=400&q=80&fit=crop&crop=top" alt="Ryan Torres">
+                    <img src="assets/images/trainer-ryan.png" alt="Ryan Torres">
                 </div>
                 <div class="p-5">
                     <h3 class="text-lg font-black text-[#1A1A2E] dark:text-white" style="font-family:'Barlow Condensed',sans-serif;">Ryan Torres</h3>
@@ -397,7 +459,7 @@
             </div>
             <div class="trainer-card stagger-item">
                 <div class="img-zoom">
-                    <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=400&q=80&fit=crop&crop=top" alt="Priya Sharma">
+                    <img src="assets/images/trainer-priya.png" alt="Priya Sharma">
                 </div>
                 <div class="p-5">
                     <h3 class="text-lg font-black text-[#1A1A2E] dark:text-white" style="font-family:'Barlow Condensed',sans-serif;">Priya Sharma</h3>
@@ -407,7 +469,7 @@
             </div>
             <div class="trainer-card stagger-item">
                 <div class="img-zoom">
-                    <img src="https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?w=400&q=80&fit=crop&crop=top" alt="Mike Chen">
+                    <img src="assets/images/trainer-mike.png" alt="Mike Chen">
                 </div>
                 <div class="p-5">
                     <h3 class="text-lg font-black text-[#1A1A2E] dark:text-white" style="font-family:'Barlow Condensed',sans-serif;">Mike Chen</h3>
@@ -417,7 +479,7 @@
             </div>
             <div class="trainer-card stagger-item">
                 <div class="img-zoom">
-                    <img src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?w=400&q=80&fit=crop&crop=top" alt="Sarah Williams">
+                    <img src="assets/images/trainer-sarah.png" alt="Sarah Williams">
                 </div>
                 <div class="p-5">
                     <h3 class="text-lg font-black text-[#1A1A2E] dark:text-white" style="font-family:'Barlow Condensed',sans-serif;">Sarah Williams</h3>
@@ -441,7 +503,7 @@
             <h2 class="text-5xl md:text-6xl font-black text-[#1A1A2E] dark:text-white mt-4 tracking-tight" style="font-family:'Barlow Condensed',sans-serif;">REAL RESULTS,<br><span class="text-[#E8401C]">REAL PEOPLE</span></h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-container">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-container">
             <div class="bg-white dark:bg-[#1a1a35] border border-[#ebebf5] dark:border-[#252545] rounded-2xl p-6 stagger-item">
                 <div class="flex gap-0.5 mb-4">
                     <svg class="star-fill w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -452,7 +514,7 @@
                 </div>
                 <p class="text-[#5a5a7a] dark:text-[#9090b8] text-sm leading-relaxed mb-5">"IronPeak completely transformed my life. Lost 25 lbs in 4 months with Coach Ryan's HIIT program. The community keeps me accountable!"</p>
                 <div class="flex items-center gap-3">
-                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=50&h=50&fit=crop&crop=face" class="w-10 h-10 rounded-full object-cover" alt="Member">
+                    <img src="assets/images/member-jessica.png" class="w-10 h-10 rounded-full object-cover" alt="Jessica K.">
                     <div>
                         <p class="text-sm font-bold text-[#1A1A2E] dark:text-white">Jessica K.</p>
                         <p class="text-[#5a5a7a] text-xs">Member since 2023</p>
@@ -469,14 +531,14 @@
                 </div>
                 <p class="text-[#5a5a7a] dark:text-[#9090b8] text-sm leading-relaxed mb-5">"Best gym I've ever been to. The boxing classes with Mike are incredible, and the member dashboard makes booking so easy!"</p>
                 <div class="flex items-center gap-3">
-                    <img src="https://images.unsplash.com/photo-1500048993953-d23a436266cf?w=50&h=50&fit=crop&crop=face" class="w-10 h-10 rounded-full object-cover" alt="Member">
+                    <img src="assets/images/member-david.png" class="w-10 h-10 rounded-full object-cover" alt="David M.">
                     <div>
                         <p class="text-sm font-bold text-[#1A1A2E] dark:text-white">David M.</p>
                         <p class="text-[#5a5a7a] text-xs">Member since 2022</p>
                     </div>
                 </div>
             </div>
-            <div class="bg-white dark:bg-[#1a1a35] border border-[#ebebf5] dark:border-[#252545] rounded-2xl p-6 stagger-item">
+            <div class="bg-white dark:bg-[#1a1a35] border border-[#ebebf5] dark:border-[#252545] rounded-2xl p-6 stagger-item sm:col-span-2 sm:max-w-md sm:mx-auto sm:w-full lg:col-span-1 lg:max-w-none">
                 <div class="flex gap-0.5 mb-4">
                     <svg class="star-fill w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                     <svg class="star-fill w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -486,7 +548,7 @@
                 </div>
                 <p class="text-[#5a5a7a] dark:text-[#9090b8] text-sm leading-relaxed mb-5">"The yoga classes are transformative. Priya is an amazing instructor. I feel stronger, calmer, and more focused every day."</p>
                 <div class="flex items-center gap-3">
-                    <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=50&h=50&fit=crop&crop=face" class="w-10 h-10 rounded-full object-cover" alt="Member">
+                    <img src="assets/images/member-aisha.png?v=2" class="w-10 h-10 rounded-full object-cover" alt="Aisha R.">
                     <div>
                         <p class="text-sm font-bold text-[#1A1A2E] dark:text-white">Aisha R.</p>
                         <p class="text-[#5a5a7a] text-xs">Member since 2024</p>
