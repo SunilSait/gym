@@ -11,7 +11,7 @@
     <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#E8401C', secondary: '#1A1A2E' } } } }</script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
-<body class="dark" id="dash-body">
+<body id="dash-body">
 
 <div class="dash-layout">
 
@@ -38,15 +38,6 @@
                 <button id="sidebar-close" onclick="closeSidebar()" class="text-[#9090b8] hover:text-white transition-colors p-1.5 rounded-lg hover:bg-white/5 hidden" aria-label="Close sidebar">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </button>
-            </div>
-
-            <!-- Member Profile Mini -->
-            <div class="flex items-center gap-3 px-3 py-3 mb-4 rounded-2xl bg-white/5 mx-0">
-                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=80&h=80&fit=crop&crop=face" class="w-10 h-10 rounded-full object-cover shrink-0 border-2 border-[#E8401C]" alt="Member avatar" id="dash-member-img">
-                <div class="overflow-hidden">
-                    <p class="text-white text-sm font-bold leading-none truncate" id="dash-member-name">Alex Johnson</p>
-                    <p class="text-[#9090b8] text-[11px] mt-0.5 truncate" id="dash-member-plan">PRO Member</p>
-                </div>
             </div>
 
             <!-- Nav Items -->
@@ -120,7 +111,7 @@
             <div class="flex items-center gap-2">
                 <!-- Theme toggle -->
                 <button onclick="toggleTheme()" class="dash-icon-btn" aria-label="Toggle theme" title="Toggle theme">
-                    <svg id="dash-theme-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <span id="dash-theme-icon" class="flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
                 </button>
                 <!-- RTL toggle -->
                 <button id="dash-dir-btn" onclick="toggleDir()" class="dash-icon-btn text-[10px] font-black" title="Toggle RTL/LTR">LTR</button>
@@ -246,7 +237,7 @@
                         <div class="space-y-3">
                             <!-- Class Item 1 -->
                             <div class="flex items-center gap-4 p-4 bg-white/5 border border-white/8 rounded-2xl hover:border-[#E8401C]/30 transition-all group">
-                                <div class="w-10 h-10 bg-[#E8401C] rounded-xl flex items-center justify-center shrink-0 font-black text-white text-sm" style="font-family:'Barlow Condensed',sans-serif;">HI</div>
+                                <img src="../assets/classes_hiit_blast.png" class="w-10 h-10 rounded-xl object-cover shrink-0" alt="HIIT Blast">
                                 <div class="flex-1 min-w-0">
                                     <div class="font-bold text-white text-sm truncate">HIIT Blast</div>
                                     <div class="text-[#9090b8] text-[11px]">Ryan Torres · 45 min</div>
@@ -262,7 +253,7 @@
 
                             <!-- Class Item 2 -->
                             <div class="flex items-center gap-4 p-4 bg-white/5 border border-white/8 rounded-2xl hover:border-[#E8401C]/30 transition-all group">
-                                <div class="w-10 h-10 bg-[#22c55e] rounded-xl flex items-center justify-center shrink-0 font-black text-white text-sm" style="font-family:'Barlow Condensed',sans-serif;">YG</div>
+                                <img src="../assets/classes_power_yoga.png" class="w-10 h-10 rounded-xl object-cover shrink-0" alt="Power Yoga">
                                 <div class="flex-1 min-w-0">
                                     <div class="font-bold text-white text-sm truncate">Power Yoga</div>
                                     <div class="text-[#9090b8] text-[11px]">Priya Sharma · 60 min</div>
@@ -278,7 +269,7 @@
 
                             <!-- Class Item 3 -->
                             <div class="flex items-center gap-4 p-4 bg-white/5 border border-white/8 rounded-2xl hover:border-[#E8401C]/30 transition-all group">
-                                <div class="w-10 h-10 bg-[#f59e0b] rounded-xl flex items-center justify-center shrink-0 font-black text-white text-sm" style="font-family:'Barlow Condensed',sans-serif;">BX</div>
+                                <img src="../assets/classes_boxing_fit.png" class="w-10 h-10 rounded-xl object-cover shrink-0" alt="Boxing Fit">
                                 <div class="flex-1 min-w-0">
                                     <div class="font-bold text-white text-sm truncate">Boxing Fit</div>
                                     <div class="text-[#9090b8] text-[11px]">Mike Chen · 50 min</div>
@@ -303,7 +294,7 @@
                 <!-- Right Column -->
                 <div class="space-y-5">
                     <!-- Membership Card -->
-                    <div class="dash-card" style="background:linear-gradient(135deg, rgba(232,64,28,0.15), rgba(26,26,46,0.95));border-color:rgba(232,64,28,0.35);">
+                    <div class="dash-card dash-gradient-card">
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-[#E8401C] text-xs font-black uppercase tracking-widest">Membership</span>
                             <span class="bg-[#E8401C] text-white text-[10px] font-black px-2 py-0.5 rounded-full">ACTIVE</span>
@@ -409,9 +400,6 @@
 
 <script src="../components.js"></script>
 <script>
-    // Init dark mode
-    document.documentElement.classList.add('dark');
-
     // Dir toggle
     if (localStorage.getItem('gym_dir') === 'rtl') {
         document.documentElement.setAttribute('dir', 'rtl');

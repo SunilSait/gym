@@ -5,24 +5,29 @@
  */
 
 /* ─── THEME ────────────────────────────────────────────── */
+function applyTheme(isDark) {
+    const html = document.documentElement;
+    html.classList.toggle('dark', isDark);
+    if (document.body) {
+        document.body.classList.toggle('dark', isDark);
+    }
+}
+
 (function initTheme() {
     const saved = localStorage.getItem('gym_theme');
-    const html = document.documentElement;
-    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        html.classList.add('dark');
-    } else {
-        html.classList.remove('dark');
-    }
+    const isDark = saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    applyTheme(isDark);
     const dir = localStorage.getItem('gym_dir');
     if (dir === 'rtl') {
-        html.setAttribute('dir', 'rtl');
+        document.documentElement.setAttribute('dir', 'rtl');
     }
 })();
 
 function toggleTheme() {
     const html = document.documentElement;
-    const isDark = html.classList.toggle('dark');
+    const isDark = !html.classList.contains('dark');
     localStorage.setItem('gym_theme', isDark ? 'dark' : 'light');
+    applyTheme(isDark);
     updateThemeIcons();
 }
 
@@ -474,6 +479,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     initTabs();
     initMarquee();
+    const savedTheme = localStorage.getItem('gym_theme');
+    const isDark = savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    applyTheme(isDark);
     updateThemeIcons();
 
     // Sync dir button labels on load
