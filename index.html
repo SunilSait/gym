@@ -64,7 +64,7 @@
 
                 <!-- Tagline divider -->
                 <div class="flex items-center gap-4 my-6 animate-fade-in-up" style="animation-delay:0.3s;">
-                    <div style="flex:1;height:1px;background:linear-gradient(90deg,#E8401C,transparent);"></div>
+                    <div style="width:40px;height:2px;background:#E8401C;flex-shrink:0;"></div>
                     <span style="color:#9090b8;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;white-space:nowrap;">IronPeak Gym &amp; Fitness Center</span>
                 </div>
 
@@ -107,10 +107,10 @@
             </div>
 
             <!-- ═══ RIGHT: Image Mosaic + Floating Stat Badges ═══ -->
-            <div class="hidden lg:block relative animate-fade-in-up" style="animation-delay:0.35s;">
+            <div class="relative mt-12 lg:mt-0 animate-fade-in-up" style="animation-delay:0.35s;">
 
                 <!-- Mosaic container -->
-                <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;height:560px;position:relative;">
+                <div class="h-[380px] sm:h-[480px] lg:h-[560px]" style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;position:relative;">
 
                     <!-- Card 1 — tall left spanning both rows -->
                     <div style="grid-row:1/3;border-radius:20px;overflow:hidden;position:relative;border:1.5px solid rgba(255,255,255,0.1);box-shadow:0 24px 60px rgba(0,0,0,0.6);transition:transform 0.4s,border-color 0.3s;" onmouseover="this.style.transform='scale(1.02)';this.style.borderColor='rgba(232,64,28,0.5)';" onmouseout="this.style.transform='scale(1)';this.style.borderColor='rgba(255,255,255,0.1)';">
@@ -144,24 +144,24 @@
                 </div>
 
                 <!-- Floating Stat Badge 1 — Members -->
-                <div style="position:absolute;top:24px;right:-22px;background:rgba(26,26,45,0.92);backdrop-filter:blur(16px);border:1px solid rgba(232,64,28,0.35);border-radius:14px;padding:14px 20px;display:flex;align-items:center;gap:12px;box-shadow:0 12px 40px rgba(0,0,0,0.5);animation:float 4s ease-in-out infinite;">
-                    <div style="width:38px;height:38px;background:#E8401C;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <div class="right-2 sm:right-[-12px] lg:right-[-22px]" style="position:absolute;top:20px;background:rgba(26,26,45,0.92);backdrop-filter:blur(16px);border:1px solid rgba(232,64,28,0.35);border-radius:14px;padding:10px 16px;display:flex;align-items:center;gap:10px;box-shadow:0 12px 40px rgba(0,0,0,0.5);animation:float 4s ease-in-out infinite;z-index:20;">
+                    <div style="width:34px;height:34px;background:#E8401C;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
                     <div>
-                        <p style="color:#fff;font-weight:900;font-size:20px;line-height:1;font-family:'Barlow Condensed',sans-serif;">2,400+</p>
-                        <p style="color:#9090b8;font-size:11px;font-weight:500;margin-top:2px;">Active Members</p>
+                        <p style="color:#fff;font-weight:900;font-size:18px;line-height:1;font-family:'Barlow Condensed',sans-serif;">2,400+</p>
+                        <p style="color:#9090b8;font-size:10px;font-weight:500;margin-top:2px;">Active Members</p>
                     </div>
                 </div>
 
                 <!-- Floating Stat Badge 2 — Rating -->
-                <div style="position:absolute;bottom:28px;right:-22px;background:#E8401C;border-radius:14px;padding:14px 20px;display:flex;align-items:center;gap:12px;box-shadow:0 12px 40px rgba(232,64,28,0.45);animation:float 4s ease-in-out infinite 2s;">
-                    <div style="width:38px;height:38px;background:rgba(0,0,0,0.25);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                        <svg width="18" height="18" fill="#fff" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <div class="right-2 sm:right-[-12px] lg:right-[-22px]" style="position:absolute;bottom:20px;background:#E8401C;border-radius:14px;padding:10px 16px;display:flex;align-items:center;gap:10px;box-shadow:0 12px 40px rgba(232,64,28,0.45);animation:float 4s ease-in-out infinite 2s;z-index:20;">
+                    <div style="width:34px;height:34px;background:rgba(0,0,0,0.25);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                        <svg width="16" height="16" fill="#fff" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                     </div>
                     <div>
-                        <p style="color:#fff;font-weight:900;font-size:20px;line-height:1;font-family:'Barlow Condensed',sans-serif;">4.9 / 5</p>
-                        <p style="color:rgba(255,255,255,0.75);font-size:11px;font-weight:500;margin-top:2px;">Member Rating</p>
+                        <p style="color:#fff;font-weight:900;font-size:18px;line-height:1;font-family:'Barlow Condensed',sans-serif;">4.9 / 5</p>
+                        <p style="color:rgba(255,255,255,0.75);font-size:10px;font-weight:500;margin-top:2px;">Member Rating</p>
                     </div>
                 </div>
 

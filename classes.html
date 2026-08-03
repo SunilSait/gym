@@ -22,6 +22,23 @@
         .dark .slot-yoga { background:rgba(34,197,94,0.18); color:#4ade80; }
         .dark .slot-boxing { background:rgba(234,179,8,0.18); color:#fbbf24; }
         .dark .slot-spin { background:rgba(59,130,246,0.18); color:#93c5fd; }
+
+        /* Responsive Mobile Schedule Table */
+        .schedule-table { table-layout: fixed; width: 100%; }
+        @media (max-width: 768px) {
+            .timetable-container { overflow-x: hidden !important; padding: 0.25rem !important; }
+            .schedule-table th { padding: 0.5rem 0.1rem !important; font-size: 0.65rem !important; letter-spacing: 0 !important; }
+            .schedule-table td { padding: 0.35rem 0.08rem !important; }
+            .schedule-table td.time-col { font-size: 0.62rem !important; padding-left: 0.1rem !important; padding-right: 0.1rem !important; text-align: center !important; }
+            .slot-item { padding: 0.25rem 0.1rem !important; font-size: 0.58rem !important; line-height: 1.15; border-radius: 0.375rem; word-break: break-word; }
+            .legend-container { gap: 0.375rem !important; }
+            .legend-container .slot-item { font-size: 0.65rem !important; padding: 0.25rem 0.5rem !important; }
+        }
+        @media (max-width: 480px) {
+            .schedule-table th { padding: 0.4rem 0.05rem !important; font-size: 0.58rem !important; }
+            .schedule-table td.time-col { font-size: 0.55rem !important; }
+            .slot-item { padding: 0.2rem 0.05rem !important; font-size: 0.54rem !important; }
+        }
     </style>
 </head>
 <body class="bg-white dark:bg-[#0d0d1a] text-[#0f0f1a] dark:text-[#f0f0ff]">
@@ -192,14 +209,14 @@
                     <div class="img-zoom relative">
                         <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80&fit=crop" alt="Strength">
                         <div class="absolute top-3 left-3"><span class="badge badge-primary">Strength</span></div>
-                        <div class="absolute top-3 right-3"><span class="badge badge-primary" style="background:rgba(239,68,68,0.12);color:#dc2626;border-color:rgba(239,68,68,0.25);">Full</span></div>
+                        <div class="absolute top-3 right-3"><span class="badge badge-primary">Full</span></div>
                     </div>
                     <div class="p-5">
                         <div class="flex items-center justify-between mb-2">
                             <h3 class="text-xl font-black text-[#1A1A2E] dark:text-white" style="font-family:'Barlow Condensed',sans-serif;">Strength & Conditioning</h3>
                             <span class="text-[#E8401C] text-xs font-bold">60 MIN</span>
                         </div>
-                        <p class="text-[#5a5a7a] dark:text-[#9090b8] text-sm mb-3">Build raw power and athletic conditioning with compound movements.</p>
+                        <p class="text-[#5a5a7a] dark:text-[#9090b8] text-sm mb-3">Build raw power and athletic conditioning with movements.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="text-xs text-[#5a5a7a] dark:text-[#9090b8]">📅 Wed, Sat</span>
                             <span class="text-xs text-[#5a5a7a] dark:text-[#9090b8]">⏰ 7:00 AM</span>
@@ -276,55 +293,55 @@
         </div>
 
         <div class="bg-white dark:bg-[#13132a] border border-[#ebebf5] dark:border-[#252545] rounded-2xl overflow-hidden shadow-sm reveal">
-            <div class="overflow-x-auto">
-                <table class="w-full text-sm">
+            <div class="timetable-container overflow-x-auto">
+                <table class="w-full text-sm schedule-table">
                     <thead>
                         <tr class="bg-[#f7f7fc] dark:bg-[#1a1a35]">
-                            <th class="py-4 px-4 text-left text-xs font-black uppercase tracking-widest text-[#5a5a7a] dark:text-[#9090b8]">Time</th>
-                            <th class="py-4 px-4 text-center text-xs font-black uppercase tracking-widest text-[#5a5a7a] dark:text-[#9090b8]">Mon</th>
-                            <th class="py-4 px-4 text-center text-xs font-black uppercase tracking-widest text-[#5a5a7a] dark:text-[#9090b8]">Tue</th>
-                            <th class="py-4 px-4 text-center text-xs font-black uppercase tracking-widest text-[#5a5a7a] dark:text-[#9090b8]">Wed</th>
-                            <th class="py-4 px-4 text-center text-xs font-black uppercase tracking-widest text-[#5a5a7a] dark:text-[#9090b8]">Thu</th>
-                            <th class="py-4 px-4 text-center text-xs font-black uppercase tracking-widest text-[#5a5a7a] dark:text-[#9090b8]">Fri</th>
-                            <th class="py-4 px-4 text-center text-xs font-black uppercase tracking-widest text-[#5a5a7a] dark:text-[#9090b8]">Sat</th>
+                            <th class="py-4 px-2 text-center text-xs font-black uppercase tracking-widest text-[#5a5a7a] dark:text-[#9090b8]">Time</th>
+                            <th class="py-4 px-2 text-center text-xs font-black uppercase tracking-widest text-[#5a5a7a] dark:text-[#9090b8]">Mon</th>
+                            <th class="py-4 px-2 text-center text-xs font-black uppercase tracking-widest text-[#5a5a7a] dark:text-[#9090b8]">Tue</th>
+                            <th class="py-4 px-2 text-center text-xs font-black uppercase tracking-widest text-[#5a5a7a] dark:text-[#9090b8]">Wed</th>
+                            <th class="py-4 px-2 text-center text-xs font-black uppercase tracking-widest text-[#5a5a7a] dark:text-[#9090b8]">Thu</th>
+                            <th class="py-4 px-2 text-center text-xs font-black uppercase tracking-widest text-[#5a5a7a] dark:text-[#9090b8]">Fri</th>
+                            <th class="py-4 px-2 text-center text-xs font-black uppercase tracking-widest text-[#5a5a7a] dark:text-[#9090b8]">Sat</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="border-t border-[#ebebf5] dark:border-[#252545]">
-                            <td class="py-3 px-4 text-xs font-bold text-[#5a5a7a] dark:text-[#9090b8] whitespace-nowrap">6:00 AM</td>
-                            <td class="py-3 px-2 text-center"><span class="slot-item slot-hiit block">HIIT Blast</span></td>
-                            <td class="py-3 px-2 text-center"><span class="slot-item slot-yoga block">Power Yoga</span></td>
-                            <td class="py-3 px-2 text-center"><span class="slot-item slot-hiit block">HIIT Blast</span></td>
-                            <td class="py-3 px-2 text-center"><span class="slot-item slot-yoga block">Power Yoga</span></td>
-                            <td class="py-3 px-2 text-center"><span class="slot-item slot-hiit block">HIIT Blast</span></td>
-                            <td class="py-3 px-2 text-center">—</td>
+                            <td class="time-col py-3 px-2 text-xs font-bold text-[#5a5a7a] dark:text-[#9090b8] whitespace-nowrap">6:00 AM</td>
+                            <td class="py-3 px-1 text-center"><span class="slot-item slot-hiit block">HIIT Blast</span></td>
+                            <td class="py-3 px-1 text-center"><span class="slot-item slot-yoga block">Power Yoga</span></td>
+                            <td class="py-3 px-1 text-center"><span class="slot-item slot-hiit block">HIIT Blast</span></td>
+                            <td class="py-3 px-1 text-center"><span class="slot-item slot-yoga block">Power Yoga</span></td>
+                            <td class="py-3 px-1 text-center"><span class="slot-item slot-hiit block">HIIT Blast</span></td>
+                            <td class="py-3 px-1 text-center">—</td>
                         </tr>
                         <tr class="border-t border-[#ebebf5] dark:border-[#252545]">
-                            <td class="py-3 px-4 text-xs font-bold text-[#5a5a7a] dark:text-[#9090b8] whitespace-nowrap">9:00 AM</td>
-                            <td class="py-3 px-2 text-center"><span class="slot-item slot-yoga block">Pilates Core</span></td>
-                            <td class="py-3 px-2 text-center">—</td>
-                            <td class="py-3 px-2 text-center">—</td>
-                            <td class="py-3 px-2 text-center">—</td>
-                            <td class="py-3 px-2 text-center"><span class="slot-item slot-yoga block">Pilates Core</span></td>
-                            <td class="py-3 px-2 text-center"><span class="slot-item slot-spin block">Spin Cycle</span></td>
+                            <td class="time-col py-3 px-2 text-xs font-bold text-[#5a5a7a] dark:text-[#9090b8] whitespace-nowrap">9:00 AM</td>
+                            <td class="py-3 px-1 text-center"><span class="slot-item slot-yoga block">Pilates Core</span></td>
+                            <td class="py-3 px-1 text-center">—</td>
+                            <td class="py-3 px-1 text-center">—</td>
+                            <td class="py-3 px-1 text-center">—</td>
+                            <td class="py-3 px-1 text-center"><span class="slot-item slot-yoga block">Pilates Core</span></td>
+                            <td class="py-3 px-1 text-center"><span class="slot-item slot-spin block">Spin Cycle</span></td>
                         </tr>
                         <tr class="border-t border-[#ebebf5] dark:border-[#252545]">
-                            <td class="py-3 px-4 text-xs font-bold text-[#5a5a7a] dark:text-[#9090b8] whitespace-nowrap">5:30 PM</td>
-                            <td class="py-3 px-2 text-center"><span class="slot-item slot-boxing block">Boxing Fit</span></td>
-                            <td class="py-3 px-2 text-center">—</td>
-                            <td class="py-3 px-2 text-center"><span class="slot-item slot-boxing block">Boxing Fit</span></td>
-                            <td class="py-3 px-2 text-center">—</td>
-                            <td class="py-3 px-2 text-center">—</td>
-                            <td class="py-3 px-2 text-center">—</td>
+                            <td class="time-col py-3 px-2 text-xs font-bold text-[#5a5a7a] dark:text-[#9090b8] whitespace-nowrap">5:30 PM</td>
+                            <td class="py-3 px-1 text-center"><span class="slot-item slot-boxing block">Boxing Fit</span></td>
+                            <td class="py-3 px-1 text-center">—</td>
+                            <td class="py-3 px-1 text-center"><span class="slot-item slot-boxing block">Boxing Fit</span></td>
+                            <td class="py-3 px-1 text-center">—</td>
+                            <td class="py-3 px-1 text-center">—</td>
+                            <td class="py-3 px-1 text-center">—</td>
                         </tr>
                         <tr class="border-t border-[#ebebf5] dark:border-[#252545]">
-                            <td class="py-3 px-4 text-xs font-bold text-[#5a5a7a] dark:text-[#9090b8] whitespace-nowrap">6:30 PM</td>
-                            <td class="py-3 px-2 text-center">—</td>
-                            <td class="py-3 px-2 text-center"><span class="slot-item slot-spin block">Spin Cycle</span></td>
-                            <td class="py-3 px-2 text-center">—</td>
-                            <td class="py-3 px-2 text-center"><span class="slot-item slot-spin block">Spin Cycle</span></td>
-                            <td class="py-3 px-2 text-center">—</td>
-                            <td class="py-3 px-2 text-center"><span class="slot-item slot-yoga block">Power Yoga</span></td>
+                            <td class="time-col py-3 px-2 text-xs font-bold text-[#5a5a7a] dark:text-[#9090b8] whitespace-nowrap">6:30 PM</td>
+                            <td class="py-3 px-1 text-center">—</td>
+                            <td class="py-3 px-1 text-center"><span class="slot-item slot-spin block">Spin Cycle</span></td>
+                            <td class="py-3 px-1 text-center">—</td>
+                            <td class="py-3 px-1 text-center"><span class="slot-item slot-spin block">Spin Cycle</span></td>
+                            <td class="py-3 px-1 text-center">—</td>
+                            <td class="py-3 px-1 text-center"><span class="slot-item slot-yoga block">Power Yoga</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -332,7 +349,7 @@
         </div>
 
         <!-- Legend -->
-        <div class="flex flex-wrap justify-center gap-4 mt-6">
+        <div class="legend-container flex flex-wrap justify-center gap-4 mt-6">
             <span class="slot-item slot-hiit">HIIT</span>
             <span class="slot-item slot-yoga">Yoga / Pilates</span>
             <span class="slot-item slot-boxing">Boxing</span>
