@@ -124,7 +124,7 @@ function buildNav() {
                 <span id="nav-theme-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
             </button>
             <!-- Dashboard -->
-            <a href="${base}dashboard/index.html" class="hidden xl:flex items-center gap-1.5 text-xs font-bold text-[#1A1A2E] dark:text-[#9090b8] hover:text-[#E8401C] dark:hover:text-white transition-colors px-3">
+            <a href="${base}dashboard/index.html" class="btn-secondary text-xs px-4 py-2.5 hidden xl:flex items-center gap-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                 Dashboard
             </a>

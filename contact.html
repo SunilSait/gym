@@ -8,6 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#E8401C', secondary: '#1A1A2E' } } } }</script>
 </head>
 <body class="bg-white dark:bg-[#0d0d1a] text-[#0f0f1a] dark:text-[#f0f0ff]">
@@ -178,12 +179,12 @@
     <div class="absolute inset-0" style="background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(232,64,28,0.15) 0%,transparent 70%);"></div>
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-[#E8401C]/30" style="background:rgba(232,64,28,0.08);">
-            <span class="text-lg">🔥</span>
+            <i class="fa-solid fa-fire-flame-curved text-[#E8401C]"></i>
             <span class="text-[#E8401C] text-xs font-black uppercase tracking-widest">Stop Waiting. Start Today.</span>
         </div>
         <h2 class="text-5xl md:text-7xl font-black text-white tracking-tight mb-4" style="font-family:'Barlow Condensed',sans-serif;">READY TO<br><span class="text-[#E8401C]">LEVEL UP?</span></h2>
         <p class="text-white/50 text-lg mb-10">Enter your email to get your personalized membership offer and a free 7-day trial pass — no credit card needed.</p>
-        <form onsubmit="event.preventDefault();var e=this.querySelector('input');if(e.value){alert('🎉 Your free pass is on its way to '+e.value+'!');e.value='';}" class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto mb-8">
+        <form onsubmit="event.preventDefault();var e=this.querySelector('input');if(e.value){alert('Your free pass is on its way to '+e.value+'!');e.value='';}" class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto mb-8">
             <input type="email" placeholder="your@email.com" required
                 style="flex:1;padding:18px 24px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:8px;color:#fff;font-size:14px;outline:none;transition:border-color 0.2s;"
                 onfocus="this.style.borderColor='#E8401C';" onblur="this.style.borderColor='rgba(255,255,255,0.15)';">

@@ -1016,6 +1016,26 @@ section:first-of-type:not([data-no-offset]) {
 .dash-nav-item.active { color:#fff; background:rgba(232,64,28,0.15); border-color:rgba(232,64,28,0.3); }
 .dash-nav-item.active svg { stroke:#E8401C; }
 
+/* Dashboard Sign Out Button — Red Background */
+.dash-signout-btn {
+    background: linear-gradient(135deg, #E8401C 0%, #C4341A 100%) !important;
+    color: #ffffff !important;
+    border: 1px solid #E8401C !important;
+    font-weight: 700 !important;
+    margin-top: 0.75rem;
+    box-shadow: 0 4px 16px rgba(232, 64, 28, 0.35);
+}
+.dash-signout-btn:hover {
+    background: linear-gradient(135deg, #ff4e27 0%, #E8401C 100%) !important;
+    color: #ffffff !important;
+    border-color: #ff4e27 !important;
+    box-shadow: 0 6px 24px rgba(232, 64, 28, 0.55);
+    transform: translateY(-1px);
+}
+.dash-signout-btn svg {
+    stroke: #ffffff !important;
+}
+
 .dash-main { flex:1; margin-left:260px; min-height:100vh; display:flex; flex-direction:column; background:var(--bg-secondary); color:var(--text-primary); min-width:0; transition:background-color 0.3s ease, color 0.3s ease; }
 [dir="rtl"] .dash-main { margin-left:0; margin-right:260px; }
 

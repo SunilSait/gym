@@ -8,6 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#E8401C', secondary: '#1A1A2E' } } } }</script>
 </head>
 <body class="bg-white dark:bg-[#0d0d1a] text-[#0f0f1a] dark:text-[#f0f0ff]">
@@ -82,8 +83,8 @@
 
             <!-- Pro — Popular -->
             <div class="pricing-card popular stagger-item relative">
-                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#E8401C] text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
-                    ⭐ Most Popular
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#E8401C] text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg flex items-center gap-1.5">
+                    <i class="fa-solid fa-star text-white text-[10px]"></i> Most Popular
                 </div>
                 <div class="flex items-center gap-3 mb-6 mt-2">
                     <div class="w-12 h-12 bg-[#E8401C] rounded-2xl flex items-center justify-center">
@@ -225,7 +226,7 @@
                 <div class="hidden lg:block w-px self-stretch" style="background:linear-gradient(180deg,transparent,rgba(232,64,28,0.4),transparent);"></div>
                 <!-- Content -->
                 <div class="flex-1 text-center lg:text-left">
-                    <p class="text-[#E8401C] text-xs font-black uppercase tracking-widest mb-3">🔥 Limited Time Offer</p>
+                    <p class="text-[#E8401C] text-xs font-black uppercase tracking-widest mb-3 flex items-center justify-center lg:justify-start gap-1.5"><i class="fa-solid fa-fire-flame-curved"></i> Limited Time Offer</p>
                     <h2 class="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight" style="font-family:'Barlow Condensed',sans-serif;">JOIN TODAY &amp; SAVE BIG.<br>YOUR BODY CAN'T WAIT.</h2>
                     <p class="text-white/50 text-base mb-8 max-w-lg mx-auto lg:mx-0">No contracts. No hidden fees. Just your first month at half price on any membership plan.</p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
