@@ -384,6 +384,105 @@
     </div>
 </section>
 
+<!-- ═══ FITNESS & CALORIE CALCULATOR SECTION ═══ -->
+<section class="py-24 bg-[#f7f7fc] dark:bg-[#13132a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Info Block -->
+            <div class="reveal">
+                <span class="section-label mb-4">Personalized Metrics</span>
+                <h2 class="text-5xl md:text-6xl font-black text-[#1A1A2E] dark:text-white mt-4 tracking-tight" style="font-family:'Barlow Condensed',sans-serif;">CALCULATE YOUR<br><span class="text-[#E8401C]">FITNESS GOALS</span></h2>
+                <p class="text-[#5a5a7a] dark:text-[#9090b8] text-base leading-relaxed mt-4 mb-6">
+                    Enter your details to estimate your daily recommended caloric target, Body Mass Index (BMI), and recommended training regimen designed for your body type.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-[#E8401C]/15 flex items-center justify-center text-[#E8401C] font-bold text-sm"><i class="fa-solid fa-check"></i></div>
+                        <span class="text-[#1A1A2E] dark:text-white font-semibold text-sm">Targeted Macronutrient Breakdown</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-[#E8401C]/15 flex items-center justify-center text-[#E8401C] font-bold text-sm"><i class="fa-solid fa-check"></i></div>
+                        <span class="text-[#1A1A2E] dark:text-white font-semibold text-sm">Personalized Workout Recommendations</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-[#E8401C]/15 flex items-center justify-center text-[#E8401C] font-bold text-sm"><i class="fa-solid fa-check"></i></div>
+                        <span class="text-[#1A1A2E] dark:text-white font-semibold text-sm">100% Free Consultation with Certified Trainer</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Interactive Calculator Card -->
+            <div class="bg-white dark:bg-[#1a1a35] border border-[#ebebf5] dark:border-[#252545] rounded-3xl p-5 sm:p-8 shadow-2xl reveal">
+                <form id="home-calc-form" onsubmit="event.preventDefault(); calculateMetrics();">
+                    <input type="hidden" id="calc-gender" value="male">
+                    <input type="hidden" id="calc-goal" value="loss">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-[#5a5a7a] dark:text-[#9090b8] mb-1.5">Gender</label>
+                            <div class="flex bg-[#f7f7fc] dark:bg-[#0d0d1a] p-1 rounded-xl border border-[#ebebf5] dark:border-[#252545]">
+                                <button type="button" onclick="setCalcGender('male', this)" class="gender-btn active flex-1 py-2.5 rounded-lg text-xs font-bold uppercase transition-all bg-[#E8401C] text-white shadow-md">Male</button>
+                                <button type="button" onclick="setCalcGender('female', this)" class="gender-btn flex-1 py-2.5 rounded-lg text-xs font-bold uppercase transition-all text-[#5a5a7a] dark:text-[#9090b8] hover:text-white">Female</button>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-[#5a5a7a] dark:text-[#9090b8] mb-1.5">Age</label>
+                            <input type="number" id="calc-age" value="25" min="14" max="80" oninput="calculateMetrics()" class="w-full bg-[#f7f7fc] dark:bg-[#0d0d1a] border border-[#ebebf5] dark:border-[#252545] text-[#1A1A2E] dark:text-white rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#E8401C]">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-[#5a5a7a] dark:text-[#9090b8] mb-1.5">Height (cm)</label>
+                            <input type="number" id="calc-height" value="175" min="120" max="220" oninput="calculateMetrics()" class="w-full bg-[#f7f7fc] dark:bg-[#0d0d1a] border border-[#ebebf5] dark:border-[#252545] text-[#1A1A2E] dark:text-white rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#E8401C]">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-[#5a5a7a] dark:text-[#9090b8] mb-1.5">Weight (kg)</label>
+                            <input type="number" id="calc-weight" value="70" min="30" max="200" oninput="calculateMetrics()" class="w-full bg-[#f7f7fc] dark:bg-[#0d0d1a] border border-[#ebebf5] dark:border-[#252545] text-[#1A1A2E] dark:text-white rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#E8401C]">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-[#5a5a7a] dark:text-[#9090b8] mb-1.5">Primary Goal</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                            <button type="button" onclick="setCalcGoal('loss', this)" class="goal-btn active p-3 rounded-xl border text-center transition-all bg-[#E8401C] border-[#E8401C] text-white shadow-md">
+                                <span class="block text-xs font-bold uppercase tracking-wider">Fat Loss</span>
+                                <span class="block text-[10px] opacity-80 mt-0.5">Calorie Deficit</span>
+                            </button>
+                            <button type="button" onclick="setCalcGoal('muscle', this)" class="goal-btn p-3 rounded-xl border text-center transition-all bg-[#f7f7fc] dark:bg-[#0d0d1a] border-[#ebebf5] dark:border-[#252545] text-[#5a5a7a] dark:text-[#9090b8] hover:border-[#E8401C]">
+                                <span class="block text-xs font-bold uppercase tracking-wider">Muscle</span>
+                                <span class="block text-[10px] opacity-80 mt-0.5">Hypertrophy</span>
+                            </button>
+                            <button type="button" onclick="setCalcGoal('endurance', this)" class="goal-btn p-3 rounded-xl border text-center transition-all bg-[#f7f7fc] dark:bg-[#0d0d1a] border-[#ebebf5] dark:border-[#252545] text-[#5a5a7a] dark:text-[#9090b8] hover:border-[#E8401C]">
+                                <span class="block text-xs font-bold uppercase tracking-wider">Endurance</span>
+                                <span class="block text-[10px] opacity-80 mt-0.5">Stamina</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Results Output Box -->
+                    <div id="calc-results" class="bg-[#1A1A2E] dark:bg-[#0d0d1a] text-white rounded-2xl p-5 mb-6">
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div>
+                                <span class="text-xs text-[#9090b8] uppercase font-bold tracking-wider">BMI Index</span>
+                                <div id="res-bmi" class="text-3xl font-black text-[#E8401C] mt-1" style="font-family:'Barlow Condensed',sans-serif;">22.9</div>
+                                <span id="res-bmi-status" class="text-[10px] bg-emerald-500/20 text-emerald-400 font-bold px-2 py-0.5 rounded-full uppercase">Normal</span>
+                            </div>
+                            <div>
+                                <span class="text-xs text-[#9090b8] uppercase font-bold tracking-wider">Daily Target</span>
+                                <div id="res-calories" class="text-3xl font-black text-white mt-1" style="font-family:'Barlow Condensed',sans-serif;">2,150 kcal</div>
+                                <span class="text-[10px] text-[#9090b8]">Maintenance + Workout</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full btn-primary py-3.5 text-sm uppercase font-bold">Recalculate Metrics</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ═══ WHY CHOOSE US ═══ -->
 <section class="py-24 bg-[#1A1A2E] dark:bg-[#0d0d1a]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -434,6 +533,75 @@
                 </div>
                 <h3 class="text-xl font-black text-white mb-2" style="font-family:'Barlow Condensed',sans-serif;">Flexible Pricing</h3>
                 <p class="text-[#9090b8] text-sm leading-relaxed">Affordable membership plans that fit any budget, with no hidden fees or long-term lock-ins.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SPECIALIZED TRAINING PROGRAMS ═══ -->
+<section class="py-24 bg-white dark:bg-[#0d0d1a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal">
+            <span class="section-label mb-4">Targeted Coaching</span>
+            <h2 class="text-5xl md:text-6xl font-black text-[#1A1A2E] dark:text-white mt-4 tracking-tight" style="font-family:'Barlow Condensed',sans-serif;">SCIENCE-BACKED<br><span class="text-[#E8401C]">WORKOUT PROGRAMS</span></h2>
+            <p class="text-[#5a5a7a] dark:text-[#9090b8] text-lg mt-4 max-w-xl mx-auto">Structured fitness pathways created by certified coaches to guarantee results.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-container">
+            <!-- Program 1 -->
+            <div class="stagger-item bg-[#f7f7fc] dark:bg-[#1a1a35] border border-[#ebebf5] dark:border-[#252545] rounded-3xl p-6 hover:border-[#E8401C]/50 hover:shadow-xl transition-all flex flex-col">
+                <div class="w-12 h-12 rounded-2xl bg-[#E8401C]/10 flex items-center justify-center text-[#E8401C] text-xl mb-5">
+                    <i class="fa-solid fa-fire-flame-curved"></i>
+                </div>
+                <span class="text-[10px] font-black text-[#E8401C] uppercase tracking-wider mb-2">4 Weeks &middot; Beginner to Pro</span>
+                <h3 class="text-2xl font-black text-[#1A1A2E] dark:text-white mb-2" style="font-family:'Barlow Condensed',sans-serif;">FAT LOSS SHRED</h3>
+                <p class="text-[#5a5a7a] dark:text-[#9090b8] text-xs leading-relaxed mb-6 flex-1">High-tempo metabolic conditioning & fat-burning HIIT protocols designed for maximum caloric deficit.</p>
+                <div class="border-t border-[#ebebf5] dark:border-[#252545] pt-4 flex items-center justify-between">
+                    <span class="text-xs font-bold text-[#1A1A2E] dark:text-white">5 Days / Week</span>
+                    <a href="signup.html" class="text-[#E8401C] text-xs font-bold hover:underline">Enroll →</a>
+                </div>
+            </div>
+
+            <!-- Program 2 -->
+            <div class="stagger-item bg-[#f7f7fc] dark:bg-[#1a1a35] border border-[#ebebf5] dark:border-[#252545] rounded-3xl p-6 hover:border-[#E8401C]/50 hover:shadow-xl transition-all flex flex-col">
+                <div class="w-12 h-12 rounded-2xl bg-[#E8401C]/10 flex items-center justify-center text-[#E8401C] text-xl mb-5">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
+                <span class="text-[10px] font-black text-[#E8401C] uppercase tracking-wider mb-2">8 Weeks &middot; Intermediate</span>
+                <h3 class="text-2xl font-black text-[#1A1A2E] dark:text-white mb-2" style="font-family:'Barlow Condensed',sans-serif;">HYPERTROPHY & GAINS</h3>
+                <p class="text-[#5a5a7a] dark:text-[#9090b8] text-xs leading-relaxed mb-6 flex-1">Progressive overload weightlifting plan for building lean muscle mass and structural strength.</p>
+                <div class="border-t border-[#ebebf5] dark:border-[#252545] pt-4 flex items-center justify-between">
+                    <span class="text-xs font-bold text-[#1A1A2E] dark:text-white">4 Days / Week</span>
+                    <a href="signup.html" class="text-[#E8401C] text-xs font-bold hover:underline">Enroll →</a>
+                </div>
+            </div>
+
+            <!-- Program 3 -->
+            <div class="stagger-item bg-[#f7f7fc] dark:bg-[#1a1a35] border border-[#ebebf5] dark:border-[#252545] rounded-3xl p-6 hover:border-[#E8401C]/50 hover:shadow-xl transition-all flex flex-col">
+                <div class="w-12 h-12 rounded-2xl bg-[#E8401C]/10 flex items-center justify-center text-[#E8401C] text-xl mb-5">
+                    <i class="fa-solid fa-person-running"></i>
+                </div>
+                <span class="text-[10px] font-black text-[#E8401C] uppercase tracking-wider mb-2">6 Weeks &middot; All Levels</span>
+                <h3 class="text-2xl font-black text-[#1A1A2E] dark:text-white mb-2" style="font-family:'Barlow Condensed',sans-serif;">ATHLETIC CONDITIONING</h3>
+                <p class="text-[#5a5a7a] dark:text-[#9090b8] text-xs leading-relaxed mb-6 flex-1">Sprint drills, agility ladders, plyometrics, and stamina work for real-world speed and power.</p>
+                <div class="border-t border-[#ebebf5] dark:border-[#252545] pt-4 flex items-center justify-between">
+                    <span class="text-xs font-bold text-[#1A1A2E] dark:text-white">3 Days / Week</span>
+                    <a href="signup.html" class="text-[#E8401C] text-xs font-bold hover:underline">Enroll →</a>
+                </div>
+            </div>
+
+            <!-- Program 4 -->
+            <div class="stagger-item bg-[#f7f7fc] dark:bg-[#1a1a35] border border-[#ebebf5] dark:border-[#252545] rounded-3xl p-6 hover:border-[#E8401C]/50 hover:shadow-xl transition-all flex flex-col">
+                <div class="w-12 h-12 rounded-2xl bg-[#E8401C]/10 flex items-center justify-center text-[#E8401C] text-xl mb-5">
+                    <i class="fa-solid fa-spa"></i>
+                </div>
+                <span class="text-[10px] font-black text-[#E8401C] uppercase tracking-wider mb-2">4 Weeks &middot; Recovery</span>
+                <h3 class="text-2xl font-black text-[#1A1A2E] dark:text-white mb-2" style="font-family:'Barlow Condensed',sans-serif;">MOBILITY & CORE</h3>
+                <p class="text-[#5a5a7a] dark:text-[#9090b8] text-xs leading-relaxed mb-6 flex-1">Joint restoration, spine decompression, yoga movement flows, and deep stabilizer activation.</p>
+                <div class="border-t border-[#ebebf5] dark:border-[#252545] pt-4 flex items-center justify-between">
+                    <span class="text-xs font-bold text-[#1A1A2E] dark:text-white">3 Days / Week</span>
+                    <a href="signup.html" class="text-[#E8401C] text-xs font-bold hover:underline">Enroll →</a>
+                </div>
             </div>
         </div>
     </div>
@@ -492,6 +660,91 @@
 
         <div class="text-center mt-10 reveal">
             <a href="trainers.html" class="btn-primary px-10 py-4">Meet All Trainers</a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ LIVE TIMETABLE TEASER ═══ -->
+<section class="py-24 bg-[#f7f7fc] dark:bg-[#13132a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal">
+            <div>
+                <span class="section-label mb-4">Weekly Schedule</span>
+                <h2 class="text-5xl md:text-6xl font-black text-[#1A1A2E] dark:text-white mt-4 tracking-tight" style="font-family:'Barlow Condensed',sans-serif;">LIVE CLASS<br><span class="text-[#E8401C]">TIMETABLE</span></h2>
+            </div>
+            <a href="classes.html" class="btn-secondary">View Full Schedule →</a>
+        </div>
+
+        <!-- Timetable Card Container -->
+        <div class="bg-white dark:bg-[#1a1a35] border border-[#ebebf5] dark:border-[#252545] rounded-3xl p-6 sm:p-8 shadow-xl reveal">
+            <!-- Day Tabs -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-6 border-b border-[#ebebf5] dark:border-[#252545]">
+                <button onclick="switchDayTab(this, 'mon')" class="day-tab active px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all bg-[#E8401C] text-white">Mon</button>
+                <button onclick="switchDayTab(this, 'tue')" class="day-tab px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all bg-[#f7f7fc] dark:bg-[#0d0d1a] text-[#5a5a7a] dark:text-[#9090b8] hover:text-[#E8401C]">Tue</button>
+                <button onclick="switchDayTab(this, 'wed')" class="day-tab px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all bg-[#f7f7fc] dark:bg-[#0d0d1a] text-[#5a5a7a] dark:text-[#9090b8] hover:text-[#E8401C]">Wed</button>
+                <button onclick="switchDayTab(this, 'thu')" class="day-tab px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all bg-[#f7f7fc] dark:bg-[#0d0d1a] text-[#5a5a7a] dark:text-[#9090b8] hover:text-[#E8401C]">Thu</button>
+                <button onclick="switchDayTab(this, 'fri')" class="day-tab px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all bg-[#f7f7fc] dark:bg-[#0d0d1a] text-[#5a5a7a] dark:text-[#9090b8] hover:text-[#E8401C]">Fri</button>
+                <button onclick="switchDayTab(this, 'sat')" class="day-tab px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all bg-[#f7f7fc] dark:bg-[#0d0d1a] text-[#5a5a7a] dark:text-[#9090b8] hover:text-[#E8401C]">Sat</button>
+                <button onclick="switchDayTab(this, 'sun')" class="day-tab px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all bg-[#f7f7fc] dark:bg-[#0d0d1a] text-[#5a5a7a] dark:text-[#9090b8] hover:text-[#E8401C]">Sun</button>
+            </div>
+
+            <!-- Timetable List -->
+            <div id="timetable-content" class="space-y-4">
+                <!-- Mon Item 1 -->
+                <div class="day-schedule mon-item flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-[#f7f7fc] dark:bg-[#0d0d1a] rounded-2xl gap-4 border border-[#ebebf5] dark:border-[#252545]">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 text-center">
+                            <span class="text-xs font-black text-[#E8401C] block">06:00 AM</span>
+                            <span class="text-[10px] text-[#5a5a7a] dark:text-[#9090b8]">45 min</span>
+                        </div>
+                        <div class="w-px h-10 bg-[#ebebf5] dark:bg-[#252545]"></div>
+                        <div>
+                            <h4 class="text-lg font-black text-[#1A1A2E] dark:text-white" style="font-family:'Barlow Condensed',sans-serif;">HIIT BLAST PRO</h4>
+                            <p class="text-xs text-[#5a5a7a] dark:text-[#9090b8]">Coach Ryan Torres &middot; Studio A</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 justify-between sm:justify-end">
+                        <span class="text-xs bg-[#E8401C]/15 text-[#E8401C] font-bold px-3 py-1 rounded-full uppercase">High Intensity</span>
+                        <a href="login.html" class="btn-primary py-2 px-5 text-xs">Book Slot</a>
+                    </div>
+                </div>
+                <!-- Mon Item 2 -->
+                <div class="day-schedule mon-item flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-[#f7f7fc] dark:bg-[#0d0d1a] rounded-2xl gap-4 border border-[#ebebf5] dark:border-[#252545]">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 text-center">
+                            <span class="text-xs font-black text-[#E8401C] block">09:30 AM</span>
+                            <span class="text-[10px] text-[#5a5a7a] dark:text-[#9090b8]">60 min</span>
+                        </div>
+                        <div class="w-px h-10 bg-[#ebebf5] dark:bg-[#252545]"></div>
+                        <div>
+                            <h4 class="text-lg font-black text-[#1A1A2E] dark:text-white" style="font-family:'Barlow Condensed',sans-serif;">POWER VINYASA YOGA</h4>
+                            <p class="text-xs text-[#5a5a7a] dark:text-[#9090b8]">Coach Priya Sharma &middot; Zen Studio</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 justify-between sm:justify-end">
+                        <span class="text-xs bg-emerald-500/15 text-emerald-500 font-bold px-3 py-1 rounded-full uppercase">All Levels</span>
+                        <a href="login.html" class="btn-primary py-2 px-5 text-xs">Book Slot</a>
+                    </div>
+                </div>
+                <!-- Mon Item 3 -->
+                <div class="day-schedule mon-item flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-[#f7f7fc] dark:bg-[#0d0d1a] rounded-2xl gap-4 border border-[#ebebf5] dark:border-[#252545]">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 text-center">
+                            <span class="text-xs font-black text-[#E8401C] block">05:30 PM</span>
+                            <span class="text-[10px] text-[#5a5a7a] dark:text-[#9090b8]">50 min</span>
+                        </div>
+                        <div class="w-px h-10 bg-[#ebebf5] dark:bg-[#252545]"></div>
+                        <div>
+                            <h4 class="text-lg font-black text-[#1A1A2E] dark:text-white" style="font-family:'Barlow Condensed',sans-serif;">BOXING COMBAT FIT</h4>
+                            <p class="text-xs text-[#5a5a7a] dark:text-[#9090b8]">Coach Mike Chen &middot; Ring Arena</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 justify-between sm:justify-end">
+                        <span class="text-xs bg-amber-500/15 text-amber-500 font-bold px-3 py-1 rounded-full uppercase">Intermediate</span>
+                        <a href="login.html" class="btn-primary py-2 px-5 text-xs">Book Slot</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -583,5 +836,116 @@
 </button>
 
 <script src="components.js"></script>
+<script>
+function setCalcGender(val, btn) {
+    document.getElementById('calc-gender').value = val;
+    document.querySelectorAll('.gender-btn').forEach(b => {
+        b.className = "gender-btn flex-1 py-2.5 rounded-lg text-xs font-bold uppercase transition-all text-[#5a5a7a] dark:text-[#9090b8] hover:text-white";
+    });
+    btn.className = "gender-btn active flex-1 py-2.5 rounded-lg text-xs font-bold uppercase transition-all bg-[#E8401C] text-white shadow-md";
+    calculateMetrics();
+}
+
+function setCalcGoal(val, btn) {
+    document.getElementById('calc-goal').value = val;
+    document.querySelectorAll('.goal-btn').forEach(b => {
+        b.className = "goal-btn p-3 rounded-xl border text-center transition-all bg-[#f7f7fc] dark:bg-[#0d0d1a] border-[#ebebf5] dark:border-[#252545] text-[#5a5a7a] dark:text-[#9090b8] hover:border-[#E8401C]";
+    });
+    btn.className = "goal-btn active p-3 rounded-xl border text-center transition-all bg-[#E8401C] border-[#E8401C] text-white shadow-md";
+    calculateMetrics();
+}
+
+function calculateMetrics() {
+    const age = parseFloat(document.getElementById('calc-age').value) || 25;
+    const height = parseFloat(document.getElementById('calc-height').value) || 175;
+    const weight = parseFloat(document.getElementById('calc-weight').value) || 70;
+    const gender = document.getElementById('calc-gender').value;
+    const goal = document.getElementById('calc-goal').value;
+
+    const bmi = (weight / ((height / 100) * (height / 100))).toFixed(1);
+    let bmiStatus = 'Normal';
+    let bmiClass = 'bg-emerald-500/20 text-emerald-400';
+    if (bmi < 18.5) { bmiStatus = 'Underweight'; bmiClass = 'bg-amber-500/20 text-amber-400'; }
+    else if (bmi >= 25 && bmi < 30) { bmiStatus = 'Overweight'; bmiClass = 'bg-amber-500/20 text-amber-400'; }
+    else if (bmi >= 30) { bmiStatus = 'High BMI'; bmiClass = 'bg-rose-500/20 text-rose-400'; }
+
+    let bmr = (10 * weight) + (6.25 * height) - (5 * age) + (gender === 'male' ? 5 : -161);
+    let tdee = Math.round(bmr * 1.45);
+
+    if (goal === 'loss') tdee -= 350;
+    else if (goal === 'muscle') tdee += 350;
+
+    document.getElementById('res-bmi').textContent = bmi;
+    const statusElem = document.getElementById('res-bmi-status');
+    statusElem.textContent = bmiStatus;
+    statusElem.className = `text-[10px] font-bold px-2 py-0.5 rounded-full uppercase ${bmiClass}`;
+    document.getElementById('res-calories').textContent = `${tdee.toLocaleString()} kcal`;
+}
+
+function switchDayTab(btn, day) {
+    document.querySelectorAll('.day-tab').forEach(t => {
+        t.className = "day-tab px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all bg-[#f7f7fc] dark:bg-[#0d0d1a] text-[#5a5a7a] dark:text-[#9090b8] hover:text-[#E8401C]";
+    });
+    btn.className = "day-tab active px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all bg-[#E8401C] text-white";
+
+    const scheduleData = {
+        mon: [
+            { time: '06:00 AM', dur: '45 min', title: 'HIIT BLAST PRO', coach: 'Coach Ryan Torres · Studio A', badge: 'High Intensity', badgeClass: 'bg-[#E8401C]/15 text-[#E8401C]' },
+            { time: '09:30 AM', dur: '60 min', title: 'POWER VINYASA YOGA', coach: 'Coach Priya Sharma · Zen Studio', badge: 'All Levels', badgeClass: 'bg-emerald-500/15 text-emerald-500' },
+            { time: '05:30 PM', dur: '50 min', title: 'BOXING COMBAT FIT', coach: 'Coach Mike Chen · Ring Arena', badge: 'Intermediate', badgeClass: 'bg-amber-500/15 text-amber-500' }
+        ],
+        tue: [
+            { time: '07:00 AM', dur: '50 min', title: 'CROSSFIT METCON', coach: 'Coach Ryan Torres · Main Arena', badge: 'Advanced', badgeClass: 'bg-rose-500/15 text-rose-500' },
+            { time: '11:00 AM', dur: '45 min', title: 'PILATES REFORMER', coach: 'Coach Priya Sharma · Studio B', badge: 'All Levels', badgeClass: 'bg-emerald-500/15 text-emerald-500' },
+            { time: '06:30 PM', dur: '45 min', title: 'SPIN & CARDIO BLAST', coach: 'Coach Sarah Williams · Cycle Studio', badge: 'High Intensity', badgeClass: 'bg-[#E8401C]/15 text-[#E8401C]' }
+        ],
+        wed: [
+            { time: '06:30 AM', dur: '60 min', title: 'HEAVY STRENGTH & POWER', coach: 'Coach Ryan Torres · Lifting Floor', badge: 'Advanced', badgeClass: 'bg-rose-500/15 text-rose-500' },
+            { time: '05:00 PM', dur: '45 min', title: 'BOXING PADS & MITTS', coach: 'Coach Mike Chen · Ring Arena', badge: 'Intermediate', badgeClass: 'bg-amber-500/15 text-amber-500' },
+            { time: '07:00 PM', dur: '60 min', title: 'CANDLELIGHT YOGA FLOW', coach: 'Coach Priya Sharma · Zen Studio', badge: 'Relaxing', badgeClass: 'bg-emerald-500/15 text-emerald-500' }
+        ],
+        thu: [
+            { time: '07:30 AM', dur: '45 min', title: 'CORE & ABS BURN', coach: 'Coach Priya Sharma · Studio A', badge: 'All Levels', badgeClass: 'bg-emerald-500/15 text-emerald-500' },
+            { time: '05:30 PM', dur: '50 min', title: 'SPIN CYCLE ENDURANCE', coach: 'Coach Sarah Williams · Cycle Studio', badge: 'High Intensity', badgeClass: 'bg-[#E8401C]/15 text-[#E8401C]' },
+            { time: '07:15 PM', dur: '60 min', title: 'KICKBOXING DRILLS', coach: 'Coach Mike Chen · Ring Arena', badge: 'Intermediate', badgeClass: 'bg-amber-500/15 text-amber-500' }
+        ],
+        fri: [
+            { time: '06:00 AM', dur: '45 min', title: 'FRIDAY HIIT SURGE', coach: 'Coach Ryan Torres · Main Arena', badge: 'High Intensity', badgeClass: 'bg-[#E8401C]/15 text-[#E8401C]' },
+            { time: '10:00 AM', dur: '50 min', title: 'FUNCTIONAL MOBILITY', coach: 'Coach Priya Sharma · Zen Studio', badge: 'All Levels', badgeClass: 'bg-emerald-500/15 text-emerald-500' },
+            { time: '06:00 PM', dur: '60 min', title: 'AFTERWORK PUMP', coach: 'Coach Mike Chen · Lifting Floor', badge: 'Intermediate', badgeClass: 'bg-amber-500/15 text-amber-500' }
+        ],
+        sat: [
+            { time: '08:30 AM', dur: '60 min', title: 'SATURDAY BOOTCAMP', coach: 'Coach Ryan & Coach Mike · Outdoor Turf', badge: 'Community', badgeClass: 'bg-[#E8401C]/15 text-[#E8401C]' },
+            { time: '10:30 AM', dur: '45 min', title: 'RHYTHM SPIN CARNIVAL', coach: 'Coach Sarah Williams · Cycle Studio', badge: 'High Energy', badgeClass: 'bg-amber-500/15 text-amber-500' }
+        ],
+        sun: [
+            { time: '09:00 AM', dur: '75 min', title: 'SUNDAY RECOVERY YOGA', coach: 'Coach Priya Sharma · Zen Studio', badge: 'Restorative', badgeClass: 'bg-emerald-500/15 text-emerald-500' },
+            { time: '11:00 AM', dur: '60 min', title: 'OPEN MAT & STRETCH', coach: 'Coach Ryan Torres · Main Arena', badge: 'All Members', badgeClass: 'bg-sky-500/15 text-sky-500' }
+        ]
+    };
+
+    const items = scheduleData[day] || scheduleData['mon'];
+    const container = document.getElementById('timetable-content');
+    container.innerHTML = items.map(item => `
+        <div class="day-schedule flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-[#f7f7fc] dark:bg-[#0d0d1a] rounded-2xl gap-4 border border-[#ebebf5] dark:border-[#252545]">
+            <div class="flex items-center gap-4">
+                <div class="w-14 text-center">
+                    <span class="text-xs font-black text-[#E8401C] block">${item.time}</span>
+                    <span class="text-[10px] text-[#5a5a7a] dark:text-[#9090b8]">${item.dur}</span>
+                </div>
+                <div class="w-px h-10 bg-[#ebebf5] dark:bg-[#252545]"></div>
+                <div>
+                    <h4 class="text-lg font-black text-[#1A1A2E] dark:text-white" style="font-family:'Barlow Condensed',sans-serif;">${item.title}</h4>
+                    <p class="text-xs text-[#5a5a7a] dark:text-[#9090b8]">${item.coach}</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 justify-between sm:justify-end">
+                <span class="text-xs ${item.badgeClass} font-bold px-3 py-1 rounded-full uppercase">${item.badge}</span>
+                <a href="login.html" class="btn-primary py-2 px-5 text-xs">Book Slot</a>
+            </div>
+        </div>
+    `).join('');
+}
+</script>
 </body>
 </html>
